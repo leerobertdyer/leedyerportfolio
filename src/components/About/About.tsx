@@ -41,7 +41,7 @@ export default function About({
             {isSkill ? (
               <>
                 <p className="text-center">{skillDescription}</p>
-                <p className="pt-2">See it applied in the following:</p>
+                {links && links.length > 0 && <p className="pt-2">See it applied in the following:</p>}
                 <div className="flex justify-around gap-2 w-full p-2 flex-wrap">
                   {links &&
                     links.map(({ href, label }) => (
@@ -57,9 +57,7 @@ export default function About({
               </>
             ) : (
               <p className="text-center">
-                I am currently studying for my AWS Certification, learning more
-                about VIM, command line tools, Redux, and GraphQL, and I am
-                always looking for new opportunities to learn and grow.
+                I currently work at Red Ventures as an Associate Software Engineer where I assist in both the architecture of new services and the maintenance of existing ones using a wide variety of technologies. 
               </p>
             )}
           </div>

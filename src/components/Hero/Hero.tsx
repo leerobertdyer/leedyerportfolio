@@ -42,11 +42,11 @@ export default function Hero() {
       >
         <div className="w-[95%] m-auto lg:text-[1.5rem]">
           <p>I specialize in</p>
-          <Span text="NEXTjs" />
+          <Span text="React" />
+          <Span text="TypeScript" /> 
           <Span text="Tailwind" />
-          <Span text="postgreSQL" /> 
-          <Span text="THREE.js" />
-          <Span text="ReactXR" />
+          <Span text="Node.js" />
+          <Span text="AWS" />
           <Span text="Vitest" />
         </div>
       </div>

@@ -25,7 +25,7 @@ export default function Skill({
         w-[6rem] h-[3rem] 
         bg-white border-2 border-leeWhite-dark 
         rounded-lg 
-        flex justify-center items-center"
+        flex justify-center items-center text-center"
         onClick={() => {
           handleSkillClick(description, links);
         }}

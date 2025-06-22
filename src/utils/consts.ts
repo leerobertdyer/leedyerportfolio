@@ -134,6 +134,21 @@ export const SKILLS = [
     links: [agendaKeeper, prysm, tinySun, wabs, pong],
   },
   {
+    name: "Golang",
+    description: "I have experience with Go working at Red Ventures to stand up several new microservices which helped us move away from legacy Java code, and gave us the opportunity to clean up and modernize our apps.",
+    links: [],
+  },
+  {
+    name: "GraphQL",
+    description: "Another Red Ventures skill I learned, I helped build a subgraph for a federated GraphQL API which allowed collaboration between several teams at RV and the greater community.",
+    links: [],
+  },
+  {
+    name: "Shell Scripts",
+    description: "I have experience with shell scripting, and have used it to automate tasks and build scripts for my development environment and workflow.",
+    links: [],
+  },
+  {
     name: "SQL",
     description:
       "I have experience with Knex, SQLAlchemy, as well as writing custom SQL functions.",
