@@ -42,7 +42,7 @@ const tinySun = {
   github: 'https://github.com/leerobertdyer/tiny_sun'
 };
 const wabs = {
-  link: "https://www.writeabadsong.com",
+  link: "#",
   href: "coding//projects#wabs",
   id: "wabs",
   label: "Write A Bad Song",
@@ -61,7 +61,7 @@ const wifeIsland = {
   github: 'https://github.com/leerobertdyer/wifeisland'
 };
 const ashevenue = {
-  link: "https://www.ashevenue.com",
+  link: "#",
   href: "coding//projects#ashevenue",
   id: "ashevenue",
   label: "Ashevenue",
