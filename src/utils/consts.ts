@@ -4,7 +4,7 @@ export const ROUTES = {
     { name: "Projects", path: "/coding/projects" },
     { name: "Contact", path: "/contact" },
     { name: "Coding", path: "/coding" },
-    { name: "Resume", path: "/RESUME.pdf", isExternal: true }
+    { name: "Resume", path: "/resumeJune2025.pdf", isExternal: true }
   ],
   "music": [
     { name: "Home", path: '/' },
