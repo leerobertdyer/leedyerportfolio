@@ -15,7 +15,7 @@ export const ROUTES = {
 
 const prysm = {
   link: "https://demo.prysmxr.com/",
-  href: "/projects#prysm",
+  href: "coding//projects#prysm",
   id: "prysm",
   label: "Prysm Demo",
   description: "A ReactXR/Three.js/TypeScript virtual reality experience",
@@ -24,7 +24,7 @@ const prysm = {
 };
 const agendaKeeper = {
   link: "https://app.agendakeeper.com/",
-  href: "/projects#agenda-keeper",
+  href: "coding//projects#agenda-keeper",
   id: "agenda-keeper",
   label: "Agenda Keeper",
   description:
@@ -34,7 +34,7 @@ const agendaKeeper = {
 };
 const tinySun = {
   link: "https://www.tinysunstudio.com",
-  href: "/projects#tiny-sun",
+  href: "coding//projects#tiny-sun",
   id: "tiny-sun",
   label: "Tiny Sun",
   description: "A React/Next.js/TypeScript studio website",
@@ -43,7 +43,7 @@ const tinySun = {
 };
 const wabs = {
   link: "https://www.writeabadsong.com",
-  href: "/projects#wabs",
+  href: "coding//projects#wabs",
   id: "wabs",
   label: "Write A Bad Song",
   description: "A React/Next.js/TypeScript songwriting and motivational app",
@@ -52,7 +52,7 @@ const wabs = {
 };
 const wifeIsland = {
   link: "https://www.wifeislandduo.com",
-  href: "/projects#wife-island",
+  href: "coding//projects#wife-island",
   id: "wife-island",
   label: "Wife Island",
   description:
@@ -62,7 +62,7 @@ const wifeIsland = {
 };
 const ashevenue = {
   link: "https://www.ashevenue.com",
-  href: "/projects#ashevenue",
+  href: "coding//projects#ashevenue",
   id: "ashevenue",
   label: "Ashevenue",
   description:
@@ -72,7 +72,7 @@ const ashevenue = {
 };
 const pong = {
   link: "https://pongpong.glitch.me/",
-  href: "/projects#pong",
+  href: "coding//projects#pong",
   id: "pong",
   label: "Pong Pong",
   description:
@@ -83,7 +83,7 @@ const pong = {
 };
 const auntVicki = {
   link: "https://www.auntvicki.rocks",
-  href: "/projects#aunt-vicki",
+  href: "coding//projects#aunt-vicki",
   label: "Aunt Vicki",
   id: "aunt-vicki",
   description:
@@ -94,7 +94,7 @@ const auntVicki = {
 
 const javaMeals = {
   link: "https://java-meals-frontend.vercel.app/",
-  href: "/projects#java-meals",
+  href: "coding//projects#java-meals",
   label: "Java Meals",
   id: "java-meals",
   description:
@@ -148,12 +148,12 @@ export const SKILLS = [
   {
     name: "Python",
     description: "I am quite comfortable with the fundamentals of Python, and have experience with Flask.",
-    links: [{ href: "/projects#ashevenue", label: "Ashevenue" }],
+    links: [{ href: "coding/projects#ashevenue", label: "Ashevenue" }],
   },
   {
     name: "Java",
     description: "I have a basic understanding of Java and OOP principles, and built a basic CRUD app to test my knowledge.",
-    links: [{ href: "/projects#java-meals", label: "Java Meals" }]
+    links: [{ href: "coding/projects#java-meals", label: "Java Meals" }]
   },
   {
     name: "TypeScript",

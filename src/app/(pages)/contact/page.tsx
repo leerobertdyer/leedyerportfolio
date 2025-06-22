@@ -65,7 +65,7 @@ export default function Contact() {
               In the meanwhile check out{" "}
               <Link
                 className="text-blue-700 hover:text-leePink-light"
-                href="/projects"
+                href="/coding/projects"
               >
                 some of his projects!
               </Link>
