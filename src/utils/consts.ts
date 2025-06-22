@@ -3,7 +3,8 @@ export const ROUTES = {
     { name: "Home", path: "/" },
     { name: "Projects", path: "/coding/projects" },
     { name: "Contact", path: "/contact" },
-    { name: "Coding", path: "/coding" }
+    { name: "Coding", path: "/coding" },
+    { name: "Resume", path: "/resume.pdf", isExternal: true }
   ],
   "music": [
     { name: "Home", path: '/' },

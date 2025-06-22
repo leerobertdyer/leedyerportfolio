@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 type PropsDefinition = {
-  links: {name: string, path: string}[];
+  links: {name: string, path: string, isExternal?: boolean}[];
 };
 
 export default function Nav({ links }: PropsDefinition) {
@@ -20,12 +20,21 @@ export default function Nav({ links }: PropsDefinition) {
   return (
     <div className="border-b-2 py-4 flex justify-evenly">
       {links.map((link) => (
-        link.path === path ? null : (
+        link.path === path ? null : link.isExternal 
+        ? (
+          <a
+            className={linkClass}
+            href={link.path} key={link.path}>
+            {link.name}
+          </a>
+        )
+        : (
           <Link
             className={`${path === link.path
                 ? activeLinkClass
                 : linkClass
               }`}
+            
             href={link.path} key={link.path}>
             {link.name}
           </Link>
