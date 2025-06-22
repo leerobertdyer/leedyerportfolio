@@ -24,6 +24,7 @@ export default function Nav({ links }: PropsDefinition) {
         ? (
           <a
             className={linkClass}
+            target="_blank"
             href={link.path} key={link.path}>
             {link.name}
           </a>
