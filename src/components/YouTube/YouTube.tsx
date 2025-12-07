@@ -7,12 +7,11 @@ export default function YouTubeLite({ id, title }: { id: string, title: string }
 
   return load ? (
     <iframe
-      width="560"
-      height="315"
       src={`https://www.youtube.com/embed/${id}?autoplay=1`}
       title="YouTube video"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
+      className="w-[255px] h-[157px] md:w-[560px] md:h-[315px]"
     />
   ) : (
     <div
@@ -20,7 +19,7 @@ export default function YouTubeLite({ id, title }: { id: string, title: string }
       style={{
         backgroundImage: `url(https://i.ytimg.com/vi/${id}/hqdefault.jpg)`,
       }}
-      className="w-[560px] h-[315px] aspect-video bg-cover bg-center cursor-pointer relative border-2 rounded-md"
+      className="w-[255px] h-[157px] md:w-[560px] md:h-[315px] aspect-video bg-cover bg-center cursor-pointer relative border-2 rounded-md"
     >
       <div className="absolute top-0 right-0 py-2 text-center z-90 bg-black bg-opacity-100 w-full">
         {title}
