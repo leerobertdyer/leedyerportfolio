@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import localFont from "next/font/local"
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const changaFont = localFont({
+  src: "./fonts/changaOne.ttf",
+  variable: "--font-changa",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   openGraph: {
@@ -18,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} ${changaFont.variable}` }>{children}</body>
     </html>
   );
 }

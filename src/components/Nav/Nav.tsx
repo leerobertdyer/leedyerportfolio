@@ -18,7 +18,7 @@ export default function Nav({ links }: PropsDefinition) {
   }, [path]);
 
   return (
-    <div className="border-b-2 py-4 flex justify-evenly">
+    <div className="border-b-2 py-4 flex justify-evenly bg-myBlue-dark">
       {links.map((link) => (
         link.path === path ? null : link.isExternal 
         ? (
