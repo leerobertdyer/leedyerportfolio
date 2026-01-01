@@ -47,7 +47,7 @@ export default function soloAct() {
     <div className="bg-[url(/images/maskedBackground.jpeg)] bg-cover bg-top text-myWhite-dark flex flex-wrap items-center justify-center gap-4 p-4">
       <div className="bg-myBlack-dark bg-opacity-90 rounded-md p-4 flex flex-col items-center justify-center w-[20rem] md:w-[40rem] h-fit text-sm md:text-lg">
         <p>
-          <span className="text-3xl text-myWhite-light">Tiny Sun</span> is a
+          <span className="text-3xl text-myWhite-light">Lee Dyer</span> is a
           singer-songwriter with over 20 years of performance experience,
           originally from Northern Michigan and now based in Charlotte, NC.
         </p>
@@ -55,7 +55,7 @@ export default function soloAct() {
           His solo work is minimal and melodic - drawing influence from artists
           like Elliott Smith and the Beatles. Fingerpicked guitar, melody, and
           lyrics are the focus, blending select covers with a deep catalog of
-          original songs.
+          original songs released under the name <span className="text-myOrange-base">Tiny Sun</span>.
         </p>
 
         <Link href="/contact" className="text-myBlue-base">

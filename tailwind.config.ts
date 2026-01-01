@@ -22,6 +22,11 @@ const config: Config = {
           base: "#f9d8a7",
           dark: "#ffce85",
         },
+        myOrange: {
+          light: "#faa857",
+          base: "#fc7f03",
+          dark: "#e34f00"
+        },
         myPink: {
           lighter: "#fac3e3",
           light: "#eda6d0",
