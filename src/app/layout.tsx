@@ -11,13 +11,6 @@ const changaFont = localFont({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  openGraph: {
-    title: 'Lee Dyer ~ Full Stack Developer',
-    description: 'Lee Dyer is a full stack developer specializing in React, Next.js, TypeScript, Node.js, and SQL. View his projects or get in touch'
-}
-
-}
 export default function RootLayout({
   children,
 }: Readonly<{
