@@ -93,21 +93,10 @@ const auntVicki = {
   github: 'https://github.com/leerobertdyer/auntvicki'
 };
 
-const javaMeals = {
-  link: "https://java-meals-frontend.vercel.app/",
-  href: "coding//projects#java-meals",
-  label: "Java Meals",
-  id: "java-meals",
-  description:
-    "A Java Spring-Boot app with basic CRUD API deployed on AWS Elastic Beanstalk with a React/TypeScript frontend.",
-  image: "/images/javaMeals.png",
-  github: "https://github.com/leerobertdyer/javaMeals_Frontend"
-}
 
 export const allProjects = [
   agendaKeeper,
   prysm,
-  javaMeals,
   tinySun,
   wabs,
   ashevenue,
@@ -168,8 +157,8 @@ export const SKILLS = [
   },
   {
     name: "Java",
-    description: "I have a basic understanding of Java and OOP principles, and built a basic CRUD app to test my knowledge.",
-    links: [{ href: "coding/projects#java-meals", label: "Java Meals" }]
+    description: "I worked extensively with java in rebuilding a legacy telephony sales app at Red Ventures.",
+    links: [{ href: "coding/projects", label: "Red Ventures Work Experience" }]
   },
   {
     name: "TypeScript",

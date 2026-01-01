@@ -13,42 +13,38 @@ export default function Music() {
           linkto="https://www.auntvicki.rocks/"
           target="blank"
         />
-
         <LinkPhoto
           size="w-[15rem] h-[15rem]"
           src="/images/wifeIslandLake.jpg"
           alt="Acoustic Duo"
           text="Aunt Vicki Duo"
-          linkto="https://www.auntvicki.rocks/duo"
+          linkto="music/duo"
           target="blank"
         />
-
-      <LinkPhoto
-          size="w-[15rem] h-[15rem]"
-          src="/images/tinySunPiano.png"
-          alt="Tiny Sun Studio"
-          text="Tiny Sun"
-          linkto="https://www.tinysunstudio.com/"
-          target="blank"
-        />
-
-
-      <LinkPhoto
+        <LinkPhoto
           size="w-[15rem] h-[15rem]"
           src="/images/leeStage1.png"
           alt="Lee Dyer Solo"
           text="Lee Dyer Solo"
           linkto="/music/solo"
         />
+        <LinkPhoto
+          size="w-[15rem] h-[15rem]"
+          src="/images/tinySunPiano.png"
+          alt="Tiny Sun Studio"
+          text="Tiny Sun Studio"
+          linkto="https://www.tinysunstudio.com/"
+          target="blank"
+        />
       </div>
-      <div id="videos" className="flex flex-col md:flex-row justify-evenly items-center gap-4 flex-wrap bg-black pb-[3rem] border-b-2 border-myWhite-base pt-8">
-        <YouTubeLite id="Yg_q40mY48c" title='Original - Lights Out'/>
-        <YouTubeLite id="SrD2nilSt2I" title='Original - Vigil'/>
-        <YouTubeLite id="aiFS5uEtRlA" title='Original - Time Is On Your Side'/>
-        
-
-        <YouTubeLite id="IHQknZV8hLA" title='Original - Out Of My Mind'/>
-        <YouTubeLite id="QMCSdp_kxps" title='Original - Body Like A Cave'/>
+      <div
+        id="videos"
+        className="flex flex-col md:flex-row justify-evenly items-center gap-4 flex-wrap bg-black pb-[3rem] border-b-2 border-myWhite-base pt-8"
+      >
+        <YouTubeLite id="Yg_q40mY48c" title='Original - Aunt Vicki "Lights Out"' />
+        <YouTubeLite id="Pg2Ox9pJlvM" title='Original - Tiny Sun "Ageless"' />
+        <YouTubeLite id="SrD2nilSt2I" title='Original - Aunt Vicki "Vigil"' />
+        <YouTubeLite id="aiFS5uEtRlA" title='Original - Aunt Vicki "Time Is On Your Side"' />
       </div>
     </>
   );
