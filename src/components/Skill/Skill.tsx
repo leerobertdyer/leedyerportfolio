@@ -18,12 +18,12 @@ export default function Skill({
     <>
       <div
         className="
-        text-leeBlack-dark
-        hover:bg-leeBlack-dark hover:text-leeWhite-light 
+        text-myBlack-dark
+        hover:bg-myBlack-dark hover:text-myWhite-light 
         hover:cursor-pointer 
         transition-none 
         w-[6rem] h-[3rem] 
-        bg-white border-2 border-leeWhite-dark 
+        bg-white border-2 border-myWhite-dark 
         rounded-lg 
         flex justify-center items-center text-center"
         onClick={() => {

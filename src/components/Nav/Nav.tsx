@@ -9,8 +9,8 @@ type PropsDefinition = {
 };
 
 export default function Nav({ links }: PropsDefinition) {
-  const linkClass = "hover:text-leePink-light hover:transform hover:scale-110";
-  const activeLinkClass = "text-leePink-dark";
+  const linkClass = "hover:text-myPink-light hover:transform hover:scale-110";
+  const activeLinkClass = "text-myPink-dark";
   const path = usePathname();
 
   useEffect(() => {

@@ -18,7 +18,7 @@ export default function Skills() {
 
   return (
     <div className="my-4 flex flex-col items-center justify-center">
-      <h2 className="text-2xl text-leeBlack-dark bg-leePink-light w-full text-center py-2">
+      <h2 className="text-2xl text-myBlack-dark bg-myPink-light w-full text-center py-2">
         Skills
         </h2>
           <About isSkill={isSkill} setIsSkill={setIsSkill} skillDescription={skillDescription} links={links}/>

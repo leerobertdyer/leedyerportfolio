@@ -33,8 +33,8 @@ export default function About({
         className="
         p-2 my-2 
         bg-gradient-to-br
-        from-leeWhite-dark to-leePink-lighter
-         w-[92%] h-fit min-h-[7rem] text-leeBlack-dark rounded-sm">
+        from-myWhite-dark to-myPink-lighter
+         w-[92%] h-fit min-h-[7rem] text-myBlack-dark rounded-sm">
           <div
           ref={skillRef} 
           className="flex flex-col justify-center items-center w-[80%] max-w-[60rem] m-auto lg:text-[1.25rem]">

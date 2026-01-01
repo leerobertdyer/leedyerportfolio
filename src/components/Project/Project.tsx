@@ -20,10 +20,10 @@ export default function Project({
 }: Project) {
   return (
     <div className="mt-2" id={id}>
-      <h1 className="w-full bg-leeWhite-light text-leeBlack-dark py-2 text-xl text-center">
+      <h1 className="w-full bg-myWhite-light text-myBlack-dark py-2 text-xl text-center">
         {name}
       </h1>
-      <h2 className="bg-white p-2 my-4 mx-auto w-[80%] text-center text-leeBlack-dark rounded-md">
+      <h2 className="bg-white p-2 my-4 mx-auto w-[80%] text-center text-myBlack-dark rounded-md">
         {description}
       </h2>
       <a
@@ -35,7 +35,7 @@ export default function Project({
       </a>
       {github && (
         <a
-          className="block text-leePink-light underline text-center w-full pb-2"
+          className="block text-myPink-light underline text-center w-full pb-2"
           href={github}
           target="_blank"
         >

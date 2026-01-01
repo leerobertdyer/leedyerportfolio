@@ -24,7 +24,7 @@ export default function Hero() {
           </p>
           <p className="text-md ">
             With a focus in
-            <span className="block text-center text-sm sm:text-xl text-leePink-lighter animate-fade-in-slowest">
+            <span className="block text-center text-sm sm:text-xl text-myPink-lighter animate-fade-in-slowest">
               React | TypeScript | Node.js
             </span>
           </p>
@@ -35,9 +35,9 @@ export default function Hero() {
         flex flex-wrap
         text-center p-2 my-2 
         mx-auto
-        bg-leeWhite-light 
+        bg-myWhite-light 
         w-[92%] h-fit max-w-[55rem]
-        text-leeBlack-dark 
+        text-myBlack-dark 
         rounded-sm"
       >
         <div className="w-[95%] m-auto lg:text-[1.5rem]">

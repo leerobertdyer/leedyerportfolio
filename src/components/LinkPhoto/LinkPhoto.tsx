@@ -25,11 +25,11 @@ export default function LinkPhoto(props: LinkPhoto) {
       <Image
         fill
         priority
-        className="rounded-md object-cover object-center border-2 border-leeWhite-dark"
+        className="rounded-md object-cover object-center border-2 border-myWhite-dark"
         src={src}
         alt={alt}
       />
-      <p className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-leeWhite-light text-center p-[2px] rounded-b-md text-xs md:text-lg">
+      <p className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-myWhite-light text-center p-[2px] rounded-b-md text-xs md:text-lg">
         {text}
       </p>
     </Link>

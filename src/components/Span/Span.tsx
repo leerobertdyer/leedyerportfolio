@@ -6,9 +6,9 @@ type Span = {
     return (
       <span className="
       inline-block
-      text-bold text-leePink-lighter 
+      text-bold text-myPink-lighter 
       p-2 rounded-sm 
-      bg-leeBlack-base
+      bg-myBlack-base
       m-[.25rem] 
       text-xs sm:text-lg lg:text-[1.25rem]">
        {text}

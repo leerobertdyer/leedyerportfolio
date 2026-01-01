@@ -9,22 +9,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        leeBlack: {
+        myBlack: {
           light: "#333333",
           base: "#242424",
           dark: "#1a1a1a",
         },
-        leeWhite: {
+        myWhite: {
           light: "#fde8c5",
           base: "#f9d8a7",
           dark: "#ffce85",
         },
-        leePink: {
+        myPink: {
           lighter: "#fac3e3",
           light: "#eda6d0",
           base: "#e381ba",
           dark: "#e0389a",
         },
+        myBlue: {
+          lighter: "#97dff7",
+          light: "#64d4fa",
+          base: "#47bee6",
+          dark: "#04485e",
+        }
       },
       animation: {
         "slide-in-right": "slide-in-right 0.5s ease-out",

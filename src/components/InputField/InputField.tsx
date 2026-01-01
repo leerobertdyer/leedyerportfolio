@@ -17,14 +17,14 @@ export default function InputField({
   register,
 }: PropsDefinition) {
     return (
-        <div className='flex flex-col w-[90%] text-leeWhite-base '>
+        <div className='flex flex-col w-[90%] text-myWhite-base '>
           <label htmlFor={id} className=''>{labelName}</label>
           <input
             type={id === 'email' ? 'email' : 'text'}
             id={id}
             disabled={disabled ?? false}
             required={required}
-            className='rounded-lg p-2 border-2 text-leeBlack-base w-full mt-1 focus:outline-leePink-dark'
+            className='rounded-lg p-2 border-2 text-myBlack-base w-full mt-1 focus:outline-myPink-dark'
             {...register && register(id as 'name' | 'email', {
               required: required,
               ...(id === 'email' && {
