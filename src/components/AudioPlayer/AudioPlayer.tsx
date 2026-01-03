@@ -1,9 +1,6 @@
 "use client";
 import SingleAudioPlayer from "@/components/AudioPlayer/SingleAudioPlayer";
-import AudioWave from "@/components/AudioWave/AudioWave";
-import Image from "next/image";
 import { useState } from "react";
-import { PiPlayPauseBold, PiSkipBack } from "react-icons/pi";
 
 export type Song = {
   id: string;
