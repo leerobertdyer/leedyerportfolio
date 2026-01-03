@@ -1,33 +1,28 @@
-import formidable from "formidable";
-import fs from "fs";
 import { uploadFile } from "@/lib/r2";
-import type { NextApiRequest, NextApiResponse } from "next";
 
-export const config = { api: { bodyParser: false } };
+export async function POST(req: Request) {
+  // Parse the multipart/form-data from the request
+  const formData = await req.formData();
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  const form = formidable({ multiples: false });
+  const file = formData.get("file") as File | null;
+  const artist = formData.get("artist") as string | null;
+  const title = formData.get("title") as string | null;
 
-  form.parse(req, async (err, fields, files) => {
-    if (err) return res.status(500).json({ error: err.message });
+  if (!file) return new Response(JSON.stringify({ error: "No file uploaded" }), { status: 400 });
+  if (!artist || !title) return new Response(JSON.stringify({ error: "Missing artist or title" }), { status: 400 });
 
-    // Make sure it's not an array
-    const file = files.file;
-    if (!file) return res.status(400).json({ error: "No file uploaded" });
+  const key = `artists/${artist}/${title}`;
 
-    const singleFile = Array.isArray(file) ? file[0] : file; // now TypeScript knows it's a File
-    const buffer = fs.readFileSync(singleFile.filepath);
-    const key = `artists/${fields.artist}/${fields.title}`;
+  // Read file content into ArrayBuffer
+  const arrayBuffer = await file.arrayBuffer();
+  const buffer = Buffer.from(arrayBuffer); // if your R2 helper expects Node Buffer
 
-    const url = await uploadFile({
-      key,
-      buffer,
-      bucket: "music",
-      contentType: singleFile.mimetype ?? "audio/mpeg",
-    });
-    res.status(200).json({ url, key });
+  const url = await uploadFile({
+    key,
+    buffer,
+    bucket: "music",
+    contentType: file.type || "audio/mpeg",
   });
+
+  return new Response(JSON.stringify({ url, key }), { status: 200 });
 }

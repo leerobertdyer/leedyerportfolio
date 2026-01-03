@@ -1,24 +1,14 @@
 import { getFile } from "@/lib/r2";
-import { NextApiRequest, NextApiResponse } from "next";
+
+// UNTESTED - This would be for downloading files from R2
 
 export default async function handler(
-    req: NextApiRequest,
-    res: NextApiResponse
+    req: Request,
 ) {
-    const { bucket, key } = req.body;
+    const { bucket, key } = await req.json();
 
-    const url = getFile
+    const url = getFile({ bucket, key })
 
-    res.status(200).json({ url, key });
-
-    // export async function getFile({bucket, key}: {bucket: string, key: string;}) {
-    //     const command = new GetObjectCommand({
-    //       Bucket: bucket,
-    //       Key: key,
-    //     });
-    //     const response = await r2.send(command);
-    //     return response.Body; // stream
-    //   }
+    return new Response(`Success`, { status: 200 });
       
-
 }

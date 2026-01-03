@@ -22,12 +22,13 @@ export async function uploadFile({bucket, key, buffer, contentType}: {bucket: st
 }
 
 export async function deleteFile({bucket, key}: {bucket: string, key: string}) {
-  await r2.send(
+  const resp = await r2.send(
     new DeleteObjectCommand({
       Bucket: bucket!,
       Key: key,
     })
   );
+  console.log("DELETE RESP: ", resp)
 }
 
 export async function getFile({bucket, key}: {bucket: string, key: string;}) {
