@@ -1,6 +1,5 @@
 import { withAuth } from "next-auth/middleware";
-import type { NextRequest } from "next/server";
-import { NextResponse } from "next/server";
+// AKA middleware
 
 export default withAuth({
   callbacks: {
@@ -11,5 +10,5 @@ export default withAuth({
 });
 
 export const config = {
-  matcher: ["/music/:path*", "/api/storage/:path*"],
+  matcher: ["/music/admin/:path*", "/api/storage/:path*", "/api/music/:path*"],
 };
