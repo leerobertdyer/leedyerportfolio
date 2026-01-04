@@ -2,7 +2,7 @@ import { getFile } from "@/lib/r2";
 
 // UNTESTED - This would be for downloading files from R2
 
-export default async function handler(
+export async function GET(
     req: Request,
 ) {
     const { bucket, key } = await req.json();
