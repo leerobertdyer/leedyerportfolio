@@ -2,7 +2,10 @@ export { default } from "next-auth/middleware";
 
 export const config = {
   matcher: [
+    // frontend protection
     "/music/(admin)/:path*",
-    "/api/storage/:path*",
+    
+    // backend protection
+    "/api/storage/:path*",  
   ],
 };
