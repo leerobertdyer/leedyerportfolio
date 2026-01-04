@@ -1,6 +1,6 @@
+"use client"
 import { useSession, signIn, signOut } from "next-auth/react"
 
-// AUTH-TODO
 export default function LoginBtn() {
   const { data: session } = useSession()
   if (session) {
