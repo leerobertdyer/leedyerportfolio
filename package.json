@@ -9,11 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.962.0",
+    "@types/formidable": "^3.4.6",
+    "@types/pg": "^8.16.0",
     "@wavesurfer/react": "^1.0.12",
     "dotenv": "17.2.3",
     "next": "^16.0.7",
     "next-auth": "^4.24.13",
     "nodemailer": "^7.0.11",
+    "pg": "^8.16.3",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.52.0",

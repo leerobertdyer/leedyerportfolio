@@ -1,7 +1,7 @@
 import { Song } from "@/components/AudioPlayer/AudioPlayer";
 import AudioWave from "@/components/AudioWave/AudioWave";
 import Image from "next/image";
-import { PiPlayPauseBold, PiSkipBack } from "react-icons/pi";
+import { PiPlayPauseBold } from "react-icons/pi";
 
 interface iSingleAudioPlayer {
   song: Song;
