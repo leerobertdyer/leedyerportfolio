@@ -8,12 +8,13 @@
     "start": "next start",
     "lint": "next lint"
   },
-    "engines": {
+  "engines": {
     "node": ">=22.12.0"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.962.0",
     "@next-auth/prisma-adapter": "^1.0.7",
+    "@prisma/adapter-pg": "^7.2.0",
     "@prisma/client": "^7.2.0",
     "@types/formidable": "^3.4.6",
     "@types/pg": "^8.16.0",
@@ -34,7 +35,7 @@
     "@types/nodemailer": "^6.4.15",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8",
+    "eslint": "^9.39.2",
     "eslint-config-next": "^16.0.5",
     "postcss": "^8",
     "prisma": "^7.2.0",
