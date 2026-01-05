@@ -9,9 +9,6 @@
 .pnp.js
 .yarn/install-state.gz
 
-# prisma
-*.prisma
-
 # testing
 /coverage
 

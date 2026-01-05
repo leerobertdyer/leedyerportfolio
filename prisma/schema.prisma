@@ -1,0 +1,98 @@
+// --- prysma setup ---
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgres"
+    schemas  = ["public", "music"]
+}
+
+// --- NextAuth models ---
+model Account {
+    id                String  @id @default(cuid())
+    userId            String
+    type              String
+    provider          String
+    providerAccountId String
+    refresh_token     String?
+    access_token      String?
+    expires_at        Int?
+    token_type        String?
+    scope             String?
+    id_token          String?
+    session_state     String?
+
+    user User @relation(fields: [userId], references: [id])
+
+    @@unique([provider, providerAccountId])
+    @@schema("public")
+}
+
+model Session {
+    id           String   @id @default(cuid())
+    sessionToken String   @unique
+    userId       String
+    expires      DateTime
+
+    user User @relation(fields: [userId], references: [id])
+
+    @@schema("public")
+}
+
+model User {
+    id            String    @id @default(cuid())
+    name          String?
+    email         String?   @unique
+    emailVerified DateTime?
+    image         String?
+
+    accounts Account[]
+    sessions Session[]
+
+    @@schema("public")
+}
+
+model VerificationToken {
+    identifier String
+    token      String   @unique
+    expires    DateTime
+
+    @@unique([identifier, token])
+    @@schema("public")
+}
+
+model artists {
+    id    Int     @id @default(autoincrement())
+    name  String  @db.VarChar(255)
+    shows shows[]
+    songs songs[]
+
+    @@schema("music")
+}
+
+model shows {
+    id          Int      @id @default(autoincrement())
+    artist_id   Int
+    show_date   DateTime @db.Timestamp(6)
+    venue       String   @db.VarChar(255)
+    ticket_url  String?  @db.VarChar(1500)
+    cost        Decimal? @db.Decimal(8, 2)
+    description String?
+    title       String   @db.VarChar(255)
+    artists     artists  @relation(fields: [artist_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+    @@schema("music")
+}
+
+model songs {
+    id        Int     @id @default(autoincrement())
+    artist_id Int
+    title     String  @db.VarChar(255)
+    src       String? @db.VarChar(1500)
+    img       String? @db.VarChar(1500)
+    is_cover  Boolean
+    artists   artists @relation(fields: [artist_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+    @@schema("music")
+}
