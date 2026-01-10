@@ -19,6 +19,7 @@
     "@types/formidable": "^3.4.6",
     "@types/pg": "^8.16.0",
     "@wavesurfer/react": "^1.0.12",
+    "date-fns": "^4.1.0",
     "dotenv": "17.2.3",
     "next": "^16.0.7",
     "next-auth": "^4.24.13",

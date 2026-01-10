@@ -225,3 +225,6 @@ export const SKILLS = [
     links: allProjects,
   },
 ];
+
+export const DUO_CALENDAR_ID =
+  "507d3c707b4698a16683b04f302ab221389050e367ad3dd0cb06889f00748a3a@group.calendar.google.com";

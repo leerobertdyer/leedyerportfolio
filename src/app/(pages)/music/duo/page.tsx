@@ -4,8 +4,30 @@ import AudioPlayer from "@/components/AudioPlayer/AudioPlayer";
 import FramedPhoto from "@/components/FramedPhoto/FramedPhoto";
 import YouTubeLite from "@/components/YouTube/YouTube";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import "dotenv/config";
+import { DUO_CALENDAR_ID } from "@/utils/consts";
+import { getOneYearsEventsGoogleCal } from "@/utils/utils";
+import { Show } from "@/utils/types";
+
+const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY || "";
 
 export default function duoAct() {
+  const [shows, setShows] = useState<Show[]>([]);
+
+  useEffect(() => {
+    const getShows = async () => {
+      const resp = await getOneYearsEventsGoogleCal({
+        CAL_ID: DUO_CALENDAR_ID,
+        API_KEY,
+      });
+      setShows(resp);
+    };
+      console.log(shows); // just to get rid of lint for now while I introduce this.
+
+    getShows();
+  }, []);
+
   const allSongs = [
     {
       id: "1",
@@ -75,6 +97,14 @@ export default function duoAct() {
         />
       </div>
       <YouTubeLite id="IHQknZV8hLA" title="Original - Out Of My Mind" />
+
+      {/* {shows &&
+        shows.map((s: Show, key) => {
+         return <div key={key}>
+            {s.summary}
+            {s.date}
+          </div>;
+        })} */}
 
       <div className="w-full h-fit flex flex-col items-center">
         <div className="bg-myBlack-dark bg-opacity-90 rounded-md p-4 flex flex-col items-center justify-center w-[20rem] md:w-[40rem] h-fit ">
