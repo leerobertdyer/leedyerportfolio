@@ -1,5 +1,4 @@
 import { defineConfig, env } from "prisma/config";
-import { PrismaAdapter } from "@next-auth/prisma-adapter"
 
 import "dotenv/config"
 
