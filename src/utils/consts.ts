@@ -228,3 +228,6 @@ export const SKILLS = [
 
 export const DUO_CALENDAR_ID =
   "507d3c707b4698a16683b04f302ab221389050e367ad3dd0cb06889f00748a3a@group.calendar.google.com";
+
+  export const SOLO_CALENDAR_ID = 
+    "56169198901904ef1fa66f1c5d53b8721892308a7ce99c430dab23b698f73409@group.calendar.google.com";

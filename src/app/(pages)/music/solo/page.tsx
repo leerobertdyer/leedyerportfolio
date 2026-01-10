@@ -4,8 +4,30 @@ import AudioPlayer from "@/components/AudioPlayer/AudioPlayer";
 import FramedPhoto from "@/components/FramedPhoto/FramedPhoto";
 import YouTubeLite from "@/components/YouTube/YouTube";
 import Link from "next/link";
+import "dotenv/config";
+import { DUO_CALENDAR_ID } from "@/utils/consts";
+import { getOneYearsEventsGoogleCal } from "@/utils/utils";
+import { Show } from "@/utils/types";
+import { useEffect, useState } from "react";
+
+const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY || "";
 
 export default function soloAct() {
+    const [shows, setShows] = useState<Show[]>([]);
+
+  useEffect(() => {
+    const getShows = async () => {
+      const resp = await getOneYearsEventsGoogleCal({
+        CAL_ID: DUO_CALENDAR_ID,
+        API_KEY,
+      });
+      setShows(resp);
+    };
+      console.log(shows); // just to get rid of lint for now while I introduce this.
+
+    getShows();
+  }, []);
+  
   const allSongs = [
     {
       id: "1",
