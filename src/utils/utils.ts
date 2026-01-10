@@ -17,7 +17,6 @@ export async function getOneYearsEventsGoogleCal({
 
   const res = await fetch(url);
   const data = await res.json();
-
   const filteredEvents = data.items.filter((e: any) => {
     const startStr = e.start.dateTime || e.start.date;
     const startDate = new Date(startStr);

@@ -5,7 +5,7 @@ import FramedPhoto from "@/components/FramedPhoto/FramedPhoto";
 import YouTubeLite from "@/components/YouTube/YouTube";
 import Link from "next/link";
 import "dotenv/config";
-import { DUO_CALENDAR_ID } from "@/utils/consts";
+import { SOLO_CALENDAR_ID } from "@/utils/consts";
 import { getOneYearsEventsGoogleCal } from "@/utils/utils";
 import { Show } from "@/utils/types";
 import { useEffect, useState } from "react";
@@ -18,7 +18,7 @@ export default function soloAct() {
   useEffect(() => {
     const getShows = async () => {
       const resp = await getOneYearsEventsGoogleCal({
-        CAL_ID: DUO_CALENDAR_ID,
+        CAL_ID: SOLO_CALENDAR_ID,
         API_KEY,
       });
       setShows(resp);
@@ -27,7 +27,7 @@ export default function soloAct() {
 
     getShows();
   }, []);
-  
+
   const allSongs = [
     {
       id: "1",
