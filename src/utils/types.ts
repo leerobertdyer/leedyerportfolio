@@ -7,6 +7,7 @@ export type Show = {
   summary: string;
   start: ShowStart;
   date: string;
+  location?: string;
 }
 
 type ShowStart = {

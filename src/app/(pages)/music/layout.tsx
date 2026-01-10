@@ -1,6 +1,6 @@
 import Nav from "@/components/Nav/Nav";
 import { ROUTES } from "@/utils/consts";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 type PropsDefinition = {
     children: React.ReactNode;

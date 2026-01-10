@@ -29,10 +29,9 @@ export default function AudioPlayer({ songs }: PropsDefinition) {
   }
 
   return (
-    <>
       <div
         className="
-    w-[95vw] sm:w-[75vw] max-w-[45rem] m-auto
+    w-[95vw] bg-red-400 sm:w-[75vw] m-auto
     border-2 border-white rounded-xl 
     overflow-hidden 
     mt-4 
@@ -60,6 +59,5 @@ export default function AudioPlayer({ songs }: PropsDefinition) {
           </p>
         </div> */}
       </div>
-    </>
   );
 }

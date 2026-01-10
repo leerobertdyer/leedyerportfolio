@@ -25,7 +25,6 @@ export default function Music() {
           alt="Acoustic Duo"
           text="Aunt Vicki Duo"
           linkto="music/duo"
-          target="blank"
         />
         <LinkPhoto
           size="w-[15rem] h-[15rem]"

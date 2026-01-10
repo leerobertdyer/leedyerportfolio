@@ -9,11 +9,23 @@ import { SOLO_CALENDAR_ID } from "@/utils/consts";
 import { getOneYearsEventsGoogleCal } from "@/utils/utils";
 import { Show } from "@/utils/types";
 import { useEffect, useState } from "react";
+import { ImCompass } from "react-icons/im";
+import { isAppleDevice } from "@/utils/utils";
 
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY || "";
 
 export default function soloAct() {
-    const [shows, setShows] = useState<Show[]>([]);
+  const [shows, setShows] = useState<Show[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [mapLinkBaseUrl, setMapLinkBaseUrl] = useState(
+    "https://www.google.com/maps/search/?api=1&query="
+  );
+
+  useEffect(() => {
+    if (isAppleDevice()) {
+      setMapLinkBaseUrl("maps://maps.apple.com/?q=");
+    }
+  }, []);
 
   useEffect(() => {
     const getShows = async () => {
@@ -22,8 +34,8 @@ export default function soloAct() {
         API_KEY,
       });
       setShows(resp);
+      setLoading(false);
     };
-      console.log(shows); // just to get rid of lint for now while I introduce this.
 
     getShows();
   }, []);
@@ -54,7 +66,7 @@ export default function soloAct() {
   ];
   return (
     <div className="bg-[url(/images/maskedBackground.jpeg)] bg-cover bg-top text-myWhite-dark flex flex-wrap items-center justify-center gap-4 p-4">
-      <div className="bg-myBlack-dark bg-opacity-90 rounded-md p-4 flex flex-col items-center justify-center w-[20rem] md:w-[40rem] h-fit text-sm md:text-lg">
+      <div className="bg-myBlack-dark bg-opacity-90 rounded-md p-4 flex flex-col items-center justify-center w-[20rem] md:w-[40rem] h-[38rem] text-sm md:text-lg">
         <p>
           <span className="text-3xl text-myWhite-light">Lee Dyer</span> is a
           singer-songwriter with over 20 years of performance experience,
@@ -78,6 +90,55 @@ export default function soloAct() {
           </div>
         </div>
       </div>
+      {shows && (
+        <div className="md:relative bg-myBlack-dark bg-opacity-90 rounded-md p-6 flex flex-col items-center justify-center w-[20rem] md:w-[45rem] h-fit md:h-[38.5rem] overflow-y-auto text-sm md:text-lg">
+          <h2 className="text-2xl mb-4 md:absolute md:top-[2rem] md:left-1/2 md:-translate-x-1/2">Upcoming Shows</h2>
+          {loading ? (
+            <p>Loading...</p>
+          ) : (
+            shows.map((show: Show, key) => (
+              <div key={key} className="w-full">
+                {/* Mobile layout */}
+                <div className="md:hidden flex flex-col items-center text-center gap-1 mb-6 w-full">
+                  <p className="text-myPink-base text-lg">
+                    {show.summary}
+                  </p>
+                  <div className="text-myWhite-light flex justify-center items-center gap-4 w-full">{show.date}
+                    {show.location && (
+                      <a
+                        href={`${mapLinkBaseUrl}${encodeURIComponent(
+                          show.location
+                        )}`}
+                        target="_blank"
+                        className="text-myBlue-base flex items-center gap-2"
+                      >
+                       <ImCompass />
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                {/* Desktop layout */}
+                <div className="hidden md:grid grid-cols-5 text-lg gap-2 w-full">
+                  <p className="text-myPink-base col-span-2">{show.summary}</p>
+                  <p className="text-myWhite-light col-span-2">{show.date}</p>
+                  {show.location && (
+                    <a
+                      href={`${mapLinkBaseUrl}${encodeURIComponent(
+                        show.location
+                      )}`}
+                      target="_blank"
+                      className="text-myBlue-base flex items-center gap-2 col-span-1"
+                    >
+                      <ImCompass /> Map
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+      )}
 
       <AudioPlayer songs={allSongs} />
 
