@@ -192,15 +192,15 @@ export type artistsWhereInput = {
   NOT?: Prisma.artistsWhereInput | Prisma.artistsWhereInput[]
   id?: Prisma.IntFilter<"artists"> | number
   name?: Prisma.StringFilter<"artists"> | string
-  shows?: Prisma.ShowsListRelationFilter
   songs?: Prisma.SongsListRelationFilter
+  videos?: Prisma.VideosListRelationFilter
 }
 
 export type artistsOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
-  shows?: Prisma.showsOrderByRelationAggregateInput
   songs?: Prisma.songsOrderByRelationAggregateInput
+  videos?: Prisma.videosOrderByRelationAggregateInput
 }
 
 export type artistsWhereUniqueInput = Prisma.AtLeast<{
@@ -209,8 +209,8 @@ export type artistsWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.artistsWhereInput[]
   NOT?: Prisma.artistsWhereInput | Prisma.artistsWhereInput[]
   name?: Prisma.StringFilter<"artists"> | string
-  shows?: Prisma.ShowsListRelationFilter
   songs?: Prisma.SongsListRelationFilter
+  videos?: Prisma.VideosListRelationFilter
 }, "id">
 
 export type artistsOrderByWithAggregationInput = {
@@ -233,28 +233,28 @@ export type artistsScalarWhereWithAggregatesInput = {
 
 export type artistsCreateInput = {
   name: string
-  shows?: Prisma.showsCreateNestedManyWithoutArtistsInput
   songs?: Prisma.songsCreateNestedManyWithoutArtistsInput
+  videos?: Prisma.videosCreateNestedManyWithoutArtistsInput
 }
 
 export type artistsUncheckedCreateInput = {
   id?: number
   name: string
-  shows?: Prisma.showsUncheckedCreateNestedManyWithoutArtistsInput
   songs?: Prisma.songsUncheckedCreateNestedManyWithoutArtistsInput
+  videos?: Prisma.videosUncheckedCreateNestedManyWithoutArtistsInput
 }
 
 export type artistsUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  shows?: Prisma.showsUpdateManyWithoutArtistsNestedInput
   songs?: Prisma.songsUpdateManyWithoutArtistsNestedInput
+  videos?: Prisma.videosUpdateManyWithoutArtistsNestedInput
 }
 
 export type artistsUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  shows?: Prisma.showsUncheckedUpdateManyWithoutArtistsNestedInput
   songs?: Prisma.songsUncheckedUpdateManyWithoutArtistsNestedInput
+  videos?: Prisma.videosUncheckedUpdateManyWithoutArtistsNestedInput
 }
 
 export type artistsCreateManyInput = {
@@ -307,20 +307,6 @@ export type IntFieldUpdateOperationsInput = {
   divide?: number
 }
 
-export type artistsCreateNestedOneWithoutShowsInput = {
-  create?: Prisma.XOR<Prisma.artistsCreateWithoutShowsInput, Prisma.artistsUncheckedCreateWithoutShowsInput>
-  connectOrCreate?: Prisma.artistsCreateOrConnectWithoutShowsInput
-  connect?: Prisma.artistsWhereUniqueInput
-}
-
-export type artistsUpdateOneRequiredWithoutShowsNestedInput = {
-  create?: Prisma.XOR<Prisma.artistsCreateWithoutShowsInput, Prisma.artistsUncheckedCreateWithoutShowsInput>
-  connectOrCreate?: Prisma.artistsCreateOrConnectWithoutShowsInput
-  upsert?: Prisma.artistsUpsertWithoutShowsInput
-  connect?: Prisma.artistsWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.artistsUpdateToOneWithWhereWithoutShowsInput, Prisma.artistsUpdateWithoutShowsInput>, Prisma.artistsUncheckedUpdateWithoutShowsInput>
-}
-
 export type artistsCreateNestedOneWithoutSongsInput = {
   create?: Prisma.XOR<Prisma.artistsCreateWithoutSongsInput, Prisma.artistsUncheckedCreateWithoutSongsInput>
   connectOrCreate?: Prisma.artistsCreateOrConnectWithoutSongsInput
@@ -335,53 +321,29 @@ export type artistsUpdateOneRequiredWithoutSongsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.artistsUpdateToOneWithWhereWithoutSongsInput, Prisma.artistsUpdateWithoutSongsInput>, Prisma.artistsUncheckedUpdateWithoutSongsInput>
 }
 
-export type artistsCreateWithoutShowsInput = {
-  name: string
-  songs?: Prisma.songsCreateNestedManyWithoutArtistsInput
+export type artistsCreateNestedOneWithoutVideosInput = {
+  create?: Prisma.XOR<Prisma.artistsCreateWithoutVideosInput, Prisma.artistsUncheckedCreateWithoutVideosInput>
+  connectOrCreate?: Prisma.artistsCreateOrConnectWithoutVideosInput
+  connect?: Prisma.artistsWhereUniqueInput
 }
 
-export type artistsUncheckedCreateWithoutShowsInput = {
-  id?: number
-  name: string
-  songs?: Prisma.songsUncheckedCreateNestedManyWithoutArtistsInput
-}
-
-export type artistsCreateOrConnectWithoutShowsInput = {
-  where: Prisma.artistsWhereUniqueInput
-  create: Prisma.XOR<Prisma.artistsCreateWithoutShowsInput, Prisma.artistsUncheckedCreateWithoutShowsInput>
-}
-
-export type artistsUpsertWithoutShowsInput = {
-  update: Prisma.XOR<Prisma.artistsUpdateWithoutShowsInput, Prisma.artistsUncheckedUpdateWithoutShowsInput>
-  create: Prisma.XOR<Prisma.artistsCreateWithoutShowsInput, Prisma.artistsUncheckedCreateWithoutShowsInput>
-  where?: Prisma.artistsWhereInput
-}
-
-export type artistsUpdateToOneWithWhereWithoutShowsInput = {
-  where?: Prisma.artistsWhereInput
-  data: Prisma.XOR<Prisma.artistsUpdateWithoutShowsInput, Prisma.artistsUncheckedUpdateWithoutShowsInput>
-}
-
-export type artistsUpdateWithoutShowsInput = {
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  songs?: Prisma.songsUpdateManyWithoutArtistsNestedInput
-}
-
-export type artistsUncheckedUpdateWithoutShowsInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  songs?: Prisma.songsUncheckedUpdateManyWithoutArtistsNestedInput
+export type artistsUpdateOneRequiredWithoutVideosNestedInput = {
+  create?: Prisma.XOR<Prisma.artistsCreateWithoutVideosInput, Prisma.artistsUncheckedCreateWithoutVideosInput>
+  connectOrCreate?: Prisma.artistsCreateOrConnectWithoutVideosInput
+  upsert?: Prisma.artistsUpsertWithoutVideosInput
+  connect?: Prisma.artistsWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.artistsUpdateToOneWithWhereWithoutVideosInput, Prisma.artistsUpdateWithoutVideosInput>, Prisma.artistsUncheckedUpdateWithoutVideosInput>
 }
 
 export type artistsCreateWithoutSongsInput = {
   name: string
-  shows?: Prisma.showsCreateNestedManyWithoutArtistsInput
+  videos?: Prisma.videosCreateNestedManyWithoutArtistsInput
 }
 
 export type artistsUncheckedCreateWithoutSongsInput = {
   id?: number
   name: string
-  shows?: Prisma.showsUncheckedCreateNestedManyWithoutArtistsInput
+  videos?: Prisma.videosUncheckedCreateNestedManyWithoutArtistsInput
 }
 
 export type artistsCreateOrConnectWithoutSongsInput = {
@@ -402,13 +364,51 @@ export type artistsUpdateToOneWithWhereWithoutSongsInput = {
 
 export type artistsUpdateWithoutSongsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  shows?: Prisma.showsUpdateManyWithoutArtistsNestedInput
+  videos?: Prisma.videosUpdateManyWithoutArtistsNestedInput
 }
 
 export type artistsUncheckedUpdateWithoutSongsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
-  shows?: Prisma.showsUncheckedUpdateManyWithoutArtistsNestedInput
+  videos?: Prisma.videosUncheckedUpdateManyWithoutArtistsNestedInput
+}
+
+export type artistsCreateWithoutVideosInput = {
+  name: string
+  songs?: Prisma.songsCreateNestedManyWithoutArtistsInput
+}
+
+export type artistsUncheckedCreateWithoutVideosInput = {
+  id?: number
+  name: string
+  songs?: Prisma.songsUncheckedCreateNestedManyWithoutArtistsInput
+}
+
+export type artistsCreateOrConnectWithoutVideosInput = {
+  where: Prisma.artistsWhereUniqueInput
+  create: Prisma.XOR<Prisma.artistsCreateWithoutVideosInput, Prisma.artistsUncheckedCreateWithoutVideosInput>
+}
+
+export type artistsUpsertWithoutVideosInput = {
+  update: Prisma.XOR<Prisma.artistsUpdateWithoutVideosInput, Prisma.artistsUncheckedUpdateWithoutVideosInput>
+  create: Prisma.XOR<Prisma.artistsCreateWithoutVideosInput, Prisma.artistsUncheckedCreateWithoutVideosInput>
+  where?: Prisma.artistsWhereInput
+}
+
+export type artistsUpdateToOneWithWhereWithoutVideosInput = {
+  where?: Prisma.artistsWhereInput
+  data: Prisma.XOR<Prisma.artistsUpdateWithoutVideosInput, Prisma.artistsUncheckedUpdateWithoutVideosInput>
+}
+
+export type artistsUpdateWithoutVideosInput = {
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  songs?: Prisma.songsUpdateManyWithoutArtistsNestedInput
+}
+
+export type artistsUncheckedUpdateWithoutVideosInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  songs?: Prisma.songsUncheckedUpdateManyWithoutArtistsNestedInput
 }
 
 
@@ -417,13 +417,13 @@ export type artistsUncheckedUpdateWithoutSongsInput = {
  */
 
 export type ArtistsCountOutputType = {
-  shows: number
   songs: number
+  videos: number
 }
 
 export type ArtistsCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  shows?: boolean | ArtistsCountOutputTypeCountShowsArgs
   songs?: boolean | ArtistsCountOutputTypeCountSongsArgs
+  videos?: boolean | ArtistsCountOutputTypeCountVideosArgs
 }
 
 /**
@@ -439,23 +439,23 @@ export type ArtistsCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Exte
 /**
  * ArtistsCountOutputType without action
  */
-export type ArtistsCountOutputTypeCountShowsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.showsWhereInput
+export type ArtistsCountOutputTypeCountSongsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.songsWhereInput
 }
 
 /**
  * ArtistsCountOutputType without action
  */
-export type ArtistsCountOutputTypeCountSongsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.songsWhereInput
+export type ArtistsCountOutputTypeCountVideosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.videosWhereInput
 }
 
 
 export type artistsSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   name?: boolean
-  shows?: boolean | Prisma.artists$showsArgs<ExtArgs>
   songs?: boolean | Prisma.artists$songsArgs<ExtArgs>
+  videos?: boolean | Prisma.artists$videosArgs<ExtArgs>
   _count?: boolean | Prisma.ArtistsCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["artists"]>
 
@@ -476,8 +476,8 @@ export type artistsSelectScalar = {
 
 export type artistsOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name", ExtArgs["result"]["artists"]>
 export type artistsInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  shows?: boolean | Prisma.artists$showsArgs<ExtArgs>
   songs?: boolean | Prisma.artists$songsArgs<ExtArgs>
+  videos?: boolean | Prisma.artists$videosArgs<ExtArgs>
   _count?: boolean | Prisma.ArtistsCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type artistsIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -486,8 +486,8 @@ export type artistsIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
 export type $artistsPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "artists"
   objects: {
-    shows: Prisma.$showsPayload<ExtArgs>[]
     songs: Prisma.$songsPayload<ExtArgs>[]
+    videos: Prisma.$videosPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -886,8 +886,8 @@ readonly fields: artistsFieldRefs;
  */
 export interface Prisma__artistsClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  shows<T extends Prisma.artists$showsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.artists$showsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$showsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   songs<T extends Prisma.artists$songsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.artists$songsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$songsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  videos<T extends Prisma.artists$videosArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.artists$videosArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$videosPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1307,30 +1307,6 @@ export type artistsDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Inter
 }
 
 /**
- * artists.shows
- */
-export type artists$showsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the shows
-   */
-  select?: Prisma.showsSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the shows
-   */
-  omit?: Prisma.showsOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.showsInclude<ExtArgs> | null
-  where?: Prisma.showsWhereInput
-  orderBy?: Prisma.showsOrderByWithRelationInput | Prisma.showsOrderByWithRelationInput[]
-  cursor?: Prisma.showsWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.ShowsScalarFieldEnum | Prisma.ShowsScalarFieldEnum[]
-}
-
-/**
  * artists.songs
  */
 export type artists$songsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1352,6 +1328,30 @@ export type artists$songsArgs<ExtArgs extends runtime.Types.Extensions.InternalA
   take?: number
   skip?: number
   distinct?: Prisma.SongsScalarFieldEnum | Prisma.SongsScalarFieldEnum[]
+}
+
+/**
+ * artists.videos
+ */
+export type artists$videosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the videos
+   */
+  select?: Prisma.videosSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the videos
+   */
+  omit?: Prisma.videosOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.videosInclude<ExtArgs> | null
+  where?: Prisma.videosWhereInput
+  orderBy?: Prisma.videosOrderByWithRelationInput | Prisma.videosOrderByWithRelationInput[]
+  cursor?: Prisma.videosWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.VideosScalarFieldEnum | Prisma.VideosScalarFieldEnum[]
 }
 
 /**

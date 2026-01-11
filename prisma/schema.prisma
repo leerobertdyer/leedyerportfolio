@@ -62,23 +62,8 @@ model VerificationToken {
 model artists {
   id    Int     @id @default(autoincrement())
   name  String  @db.VarChar(255)
-  shows shows[]
   songs songs[]
-
-  @@schema("music")
-}
-
-model shows {
-  id          Int      @id @default(autoincrement())
-  artist_id   Int
-  show_date   DateTime @db.Timestamp(6)
-  venue       String   @db.VarChar(255)
-  ticket_url  String?  @db.VarChar(1500)
-  cost        Decimal? @db.Decimal(8, 2)
-  description String?
-  title       String   @db.VarChar(255)
-  artists     artists  @relation(fields: [artist_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
-
+  videos videos[]
   @@schema("music")
 }
 
@@ -89,7 +74,20 @@ model songs {
   src       String? @db.VarChar(1500)
   img       String? @db.VarChar(1500)
   is_cover  Boolean
+  songwriter String? @db.VarChar(255)
   artists   artists @relation(fields: [artist_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@schema("music")
+}
+
+model videos {
+  id           Int     @id @default(autoincrement())
+  youtube_id   String  @db.VarChar(50)
+  title        String  @db.VarChar(255)
+  artist_id    Int
+  is_featured  Boolean @default(false)
+  show_on_main Boolean @default(false)
+  artists      artists @relation(fields: [artist_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 
   @@schema("music")
 }

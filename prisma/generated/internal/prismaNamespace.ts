@@ -389,8 +389,8 @@ export const ModelName = {
   User: 'User',
   VerificationToken: 'VerificationToken',
   artists: 'artists',
-  shows: 'shows',
-  songs: 'songs'
+  songs: 'songs',
+  videos: 'videos'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -406,7 +406,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "account" | "session" | "user" | "verificationToken" | "artists" | "shows" | "songs"
+    modelProps: "account" | "session" | "user" | "verificationToken" | "artists" | "songs" | "videos"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -780,80 +780,6 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    shows: {
-      payload: Prisma.$showsPayload<ExtArgs>
-      fields: Prisma.showsFieldRefs
-      operations: {
-        findUnique: {
-          args: Prisma.showsFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$showsPayload> | null
-        }
-        findUniqueOrThrow: {
-          args: Prisma.showsFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$showsPayload>
-        }
-        findFirst: {
-          args: Prisma.showsFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$showsPayload> | null
-        }
-        findFirstOrThrow: {
-          args: Prisma.showsFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$showsPayload>
-        }
-        findMany: {
-          args: Prisma.showsFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$showsPayload>[]
-        }
-        create: {
-          args: Prisma.showsCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$showsPayload>
-        }
-        createMany: {
-          args: Prisma.showsCreateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        createManyAndReturn: {
-          args: Prisma.showsCreateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$showsPayload>[]
-        }
-        delete: {
-          args: Prisma.showsDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$showsPayload>
-        }
-        update: {
-          args: Prisma.showsUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$showsPayload>
-        }
-        deleteMany: {
-          args: Prisma.showsDeleteManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        updateMany: {
-          args: Prisma.showsUpdateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        updateManyAndReturn: {
-          args: Prisma.showsUpdateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$showsPayload>[]
-        }
-        upsert: {
-          args: Prisma.showsUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$showsPayload>
-        }
-        aggregate: {
-          args: Prisma.ShowsAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateShows>
-        }
-        groupBy: {
-          args: Prisma.showsGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.ShowsGroupByOutputType>[]
-        }
-        count: {
-          args: Prisma.showsCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.ShowsCountAggregateOutputType> | number
-        }
-      }
-    }
     songs: {
       payload: Prisma.$songsPayload<ExtArgs>
       fields: Prisma.songsFieldRefs
@@ -925,6 +851,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.songsCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.SongsCountAggregateOutputType> | number
+        }
+      }
+    }
+    videos: {
+      payload: Prisma.$videosPayload<ExtArgs>
+      fields: Prisma.videosFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.videosFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$videosPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.videosFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$videosPayload>
+        }
+        findFirst: {
+          args: Prisma.videosFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$videosPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.videosFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$videosPayload>
+        }
+        findMany: {
+          args: Prisma.videosFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$videosPayload>[]
+        }
+        create: {
+          args: Prisma.videosCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$videosPayload>
+        }
+        createMany: {
+          args: Prisma.videosCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.videosCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$videosPayload>[]
+        }
+        delete: {
+          args: Prisma.videosDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$videosPayload>
+        }
+        update: {
+          args: Prisma.videosUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$videosPayload>
+        }
+        deleteMany: {
+          args: Prisma.videosDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.videosUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.videosUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$videosPayload>[]
+        }
+        upsert: {
+          args: Prisma.videosUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$videosPayload>
+        }
+        aggregate: {
+          args: Prisma.VideosAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateVideos>
+        }
+        groupBy: {
+          args: Prisma.videosGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.VideosGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.videosCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.VideosCountAggregateOutputType> | number
         }
       }
     }
@@ -1023,30 +1023,26 @@ export const ArtistsScalarFieldEnum = {
 export type ArtistsScalarFieldEnum = (typeof ArtistsScalarFieldEnum)[keyof typeof ArtistsScalarFieldEnum]
 
 
-export const ShowsScalarFieldEnum = {
-  id: 'id',
-  artist_id: 'artist_id',
-  show_date: 'show_date',
-  venue: 'venue',
-  ticket_url: 'ticket_url',
-  cost: 'cost',
-  description: 'description',
-  title: 'title'
-} as const
-
-export type ShowsScalarFieldEnum = (typeof ShowsScalarFieldEnum)[keyof typeof ShowsScalarFieldEnum]
-
-
 export const SongsScalarFieldEnum = {
   id: 'id',
   artist_id: 'artist_id',
   title: 'title',
   src: 'src',
   img: 'img',
-  is_cover: 'is_cover'
+  is_cover: 'is_cover',
+  songwriter: 'songwriter'
 } as const
 
 export type SongsScalarFieldEnum = (typeof SongsScalarFieldEnum)[keyof typeof SongsScalarFieldEnum]
+
+
+export const VideosScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  artist_id: 'artist_id'
+} as const
+
+export type VideosScalarFieldEnum = (typeof VideosScalarFieldEnum)[keyof typeof VideosScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1118,20 +1114,6 @@ export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel
  * Reference to a field of type 'DateTime[]'
  */
 export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
-    
-
-
-/**
- * Reference to a field of type 'Decimal'
- */
-export type DecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Decimal'>
-    
-
-
-/**
- * Reference to a field of type 'Decimal[]'
- */
-export type ListDecimalFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Decimal[]'>
     
 
 
@@ -1255,8 +1237,8 @@ export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
   verificationToken?: Prisma.VerificationTokenOmit
   artists?: Prisma.artistsOmit
-  shows?: Prisma.showsOmit
   songs?: Prisma.songsOmit
+  videos?: Prisma.videosOmit
 }
 
 /* Types for Logging */

@@ -43,6 +43,7 @@ export type SongsMinAggregateOutputType = {
   src: string | null
   img: string | null
   is_cover: boolean | null
+  songwriter: string | null
 }
 
 export type SongsMaxAggregateOutputType = {
@@ -52,6 +53,7 @@ export type SongsMaxAggregateOutputType = {
   src: string | null
   img: string | null
   is_cover: boolean | null
+  songwriter: string | null
 }
 
 export type SongsCountAggregateOutputType = {
@@ -61,6 +63,7 @@ export type SongsCountAggregateOutputType = {
   src: number
   img: number
   is_cover: number
+  songwriter: number
   _all: number
 }
 
@@ -82,6 +85,7 @@ export type SongsMinAggregateInputType = {
   src?: true
   img?: true
   is_cover?: true
+  songwriter?: true
 }
 
 export type SongsMaxAggregateInputType = {
@@ -91,6 +95,7 @@ export type SongsMaxAggregateInputType = {
   src?: true
   img?: true
   is_cover?: true
+  songwriter?: true
 }
 
 export type SongsCountAggregateInputType = {
@@ -100,6 +105,7 @@ export type SongsCountAggregateInputType = {
   src?: true
   img?: true
   is_cover?: true
+  songwriter?: true
   _all?: true
 }
 
@@ -196,6 +202,7 @@ export type SongsGroupByOutputType = {
   src: string | null
   img: string | null
   is_cover: boolean
+  songwriter: string | null
   _count: SongsCountAggregateOutputType | null
   _avg: SongsAvgAggregateOutputType | null
   _sum: SongsSumAggregateOutputType | null
@@ -228,6 +235,7 @@ export type songsWhereInput = {
   src?: Prisma.StringNullableFilter<"songs"> | string | null
   img?: Prisma.StringNullableFilter<"songs"> | string | null
   is_cover?: Prisma.BoolFilter<"songs"> | boolean
+  songwriter?: Prisma.StringNullableFilter<"songs"> | string | null
   artists?: Prisma.XOR<Prisma.ArtistsScalarRelationFilter, Prisma.artistsWhereInput>
 }
 
@@ -238,6 +246,7 @@ export type songsOrderByWithRelationInput = {
   src?: Prisma.SortOrderInput | Prisma.SortOrder
   img?: Prisma.SortOrderInput | Prisma.SortOrder
   is_cover?: Prisma.SortOrder
+  songwriter?: Prisma.SortOrderInput | Prisma.SortOrder
   artists?: Prisma.artistsOrderByWithRelationInput
 }
 
@@ -251,6 +260,7 @@ export type songsWhereUniqueInput = Prisma.AtLeast<{
   src?: Prisma.StringNullableFilter<"songs"> | string | null
   img?: Prisma.StringNullableFilter<"songs"> | string | null
   is_cover?: Prisma.BoolFilter<"songs"> | boolean
+  songwriter?: Prisma.StringNullableFilter<"songs"> | string | null
   artists?: Prisma.XOR<Prisma.ArtistsScalarRelationFilter, Prisma.artistsWhereInput>
 }, "id">
 
@@ -261,6 +271,7 @@ export type songsOrderByWithAggregationInput = {
   src?: Prisma.SortOrderInput | Prisma.SortOrder
   img?: Prisma.SortOrderInput | Prisma.SortOrder
   is_cover?: Prisma.SortOrder
+  songwriter?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.songsCountOrderByAggregateInput
   _avg?: Prisma.songsAvgOrderByAggregateInput
   _max?: Prisma.songsMaxOrderByAggregateInput
@@ -278,6 +289,7 @@ export type songsScalarWhereWithAggregatesInput = {
   src?: Prisma.StringNullableWithAggregatesFilter<"songs"> | string | null
   img?: Prisma.StringNullableWithAggregatesFilter<"songs"> | string | null
   is_cover?: Prisma.BoolWithAggregatesFilter<"songs"> | boolean
+  songwriter?: Prisma.StringNullableWithAggregatesFilter<"songs"> | string | null
 }
 
 export type songsCreateInput = {
@@ -285,6 +297,7 @@ export type songsCreateInput = {
   src?: string | null
   img?: string | null
   is_cover: boolean
+  songwriter?: string | null
   artists: Prisma.artistsCreateNestedOneWithoutSongsInput
 }
 
@@ -295,6 +308,7 @@ export type songsUncheckedCreateInput = {
   src?: string | null
   img?: string | null
   is_cover: boolean
+  songwriter?: string | null
 }
 
 export type songsUpdateInput = {
@@ -302,6 +316,7 @@ export type songsUpdateInput = {
   src?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   img?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   is_cover?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  songwriter?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   artists?: Prisma.artistsUpdateOneRequiredWithoutSongsNestedInput
 }
 
@@ -312,6 +327,7 @@ export type songsUncheckedUpdateInput = {
   src?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   img?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   is_cover?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  songwriter?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type songsCreateManyInput = {
@@ -321,6 +337,7 @@ export type songsCreateManyInput = {
   src?: string | null
   img?: string | null
   is_cover: boolean
+  songwriter?: string | null
 }
 
 export type songsUpdateManyMutationInput = {
@@ -328,6 +345,7 @@ export type songsUpdateManyMutationInput = {
   src?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   img?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   is_cover?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  songwriter?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type songsUncheckedUpdateManyInput = {
@@ -337,6 +355,7 @@ export type songsUncheckedUpdateManyInput = {
   src?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   img?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   is_cover?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  songwriter?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type SongsListRelationFilter = {
@@ -356,6 +375,7 @@ export type songsCountOrderByAggregateInput = {
   src?: Prisma.SortOrder
   img?: Prisma.SortOrder
   is_cover?: Prisma.SortOrder
+  songwriter?: Prisma.SortOrder
 }
 
 export type songsAvgOrderByAggregateInput = {
@@ -370,6 +390,7 @@ export type songsMaxOrderByAggregateInput = {
   src?: Prisma.SortOrder
   img?: Prisma.SortOrder
   is_cover?: Prisma.SortOrder
+  songwriter?: Prisma.SortOrder
 }
 
 export type songsMinOrderByAggregateInput = {
@@ -379,6 +400,7 @@ export type songsMinOrderByAggregateInput = {
   src?: Prisma.SortOrder
   img?: Prisma.SortOrder
   is_cover?: Prisma.SortOrder
+  songwriter?: Prisma.SortOrder
 }
 
 export type songsSumOrderByAggregateInput = {
@@ -437,6 +459,7 @@ export type songsCreateWithoutArtistsInput = {
   src?: string | null
   img?: string | null
   is_cover: boolean
+  songwriter?: string | null
 }
 
 export type songsUncheckedCreateWithoutArtistsInput = {
@@ -445,6 +468,7 @@ export type songsUncheckedCreateWithoutArtistsInput = {
   src?: string | null
   img?: string | null
   is_cover: boolean
+  songwriter?: string | null
 }
 
 export type songsCreateOrConnectWithoutArtistsInput = {
@@ -483,6 +507,7 @@ export type songsScalarWhereInput = {
   src?: Prisma.StringNullableFilter<"songs"> | string | null
   img?: Prisma.StringNullableFilter<"songs"> | string | null
   is_cover?: Prisma.BoolFilter<"songs"> | boolean
+  songwriter?: Prisma.StringNullableFilter<"songs"> | string | null
 }
 
 export type songsCreateManyArtistsInput = {
@@ -491,6 +516,7 @@ export type songsCreateManyArtistsInput = {
   src?: string | null
   img?: string | null
   is_cover: boolean
+  songwriter?: string | null
 }
 
 export type songsUpdateWithoutArtistsInput = {
@@ -498,6 +524,7 @@ export type songsUpdateWithoutArtistsInput = {
   src?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   img?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   is_cover?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  songwriter?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type songsUncheckedUpdateWithoutArtistsInput = {
@@ -506,6 +533,7 @@ export type songsUncheckedUpdateWithoutArtistsInput = {
   src?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   img?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   is_cover?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  songwriter?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type songsUncheckedUpdateManyWithoutArtistsInput = {
@@ -514,6 +542,7 @@ export type songsUncheckedUpdateManyWithoutArtistsInput = {
   src?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   img?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   is_cover?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  songwriter?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
@@ -525,6 +554,7 @@ export type songsSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   src?: boolean
   img?: boolean
   is_cover?: boolean
+  songwriter?: boolean
   artists?: boolean | Prisma.artistsDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["songs"]>
 
@@ -535,6 +565,7 @@ export type songsSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   src?: boolean
   img?: boolean
   is_cover?: boolean
+  songwriter?: boolean
   artists?: boolean | Prisma.artistsDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["songs"]>
 
@@ -545,6 +576,7 @@ export type songsSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   src?: boolean
   img?: boolean
   is_cover?: boolean
+  songwriter?: boolean
   artists?: boolean | Prisma.artistsDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["songs"]>
 
@@ -555,9 +587,10 @@ export type songsSelectScalar = {
   src?: boolean
   img?: boolean
   is_cover?: boolean
+  songwriter?: boolean
 }
 
-export type songsOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "artist_id" | "title" | "src" | "img" | "is_cover", ExtArgs["result"]["songs"]>
+export type songsOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "artist_id" | "title" | "src" | "img" | "is_cover" | "songwriter", ExtArgs["result"]["songs"]>
 export type songsInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   artists?: boolean | Prisma.artistsDefaultArgs<ExtArgs>
 }
@@ -580,6 +613,7 @@ export type $songsPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     src: string | null
     img: string | null
     is_cover: boolean
+    songwriter: string | null
   }, ExtArgs["result"]["songs"]>
   composites: {}
 }
@@ -1010,6 +1044,7 @@ export interface songsFieldRefs {
   readonly src: Prisma.FieldRef<"songs", 'String'>
   readonly img: Prisma.FieldRef<"songs", 'String'>
   readonly is_cover: Prisma.FieldRef<"songs", 'Boolean'>
+  readonly songwriter: Prisma.FieldRef<"songs", 'String'>
 }
     
 

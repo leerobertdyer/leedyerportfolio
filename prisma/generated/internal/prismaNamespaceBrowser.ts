@@ -56,8 +56,8 @@ export const ModelName = {
   User: 'User',
   VerificationToken: 'VerificationToken',
   artists: 'artists',
-  shows: 'shows',
-  songs: 'songs'
+  songs: 'songs',
+  videos: 'videos'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -132,30 +132,26 @@ export const ArtistsScalarFieldEnum = {
 export type ArtistsScalarFieldEnum = (typeof ArtistsScalarFieldEnum)[keyof typeof ArtistsScalarFieldEnum]
 
 
-export const ShowsScalarFieldEnum = {
-  id: 'id',
-  artist_id: 'artist_id',
-  show_date: 'show_date',
-  venue: 'venue',
-  ticket_url: 'ticket_url',
-  cost: 'cost',
-  description: 'description',
-  title: 'title'
-} as const
-
-export type ShowsScalarFieldEnum = (typeof ShowsScalarFieldEnum)[keyof typeof ShowsScalarFieldEnum]
-
-
 export const SongsScalarFieldEnum = {
   id: 'id',
   artist_id: 'artist_id',
   title: 'title',
   src: 'src',
   img: 'img',
-  is_cover: 'is_cover'
+  is_cover: 'is_cover',
+  songwriter: 'songwriter'
 } as const
 
 export type SongsScalarFieldEnum = (typeof SongsScalarFieldEnum)[keyof typeof SongsScalarFieldEnum]
+
+
+export const VideosScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  artist_id: 'artist_id'
+} as const
+
+export type VideosScalarFieldEnum = (typeof VideosScalarFieldEnum)[keyof typeof VideosScalarFieldEnum]
 
 
 export const SortOrder = {

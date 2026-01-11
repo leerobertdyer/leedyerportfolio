@@ -1,23 +1,39 @@
 "use client";
-// components/YouTubeLite.js
+
 import { useState } from "react";
 
-export default function YouTubeLite({ id, title }: { id: string, title: string }) {
+interface YouTubeLiteProps {
+  youtube_id: string;
+  title: string;
+  onEdit?: () => void;
+}
+
+export default function YouTubeLite({ youtube_id, title, onEdit }: YouTubeLiteProps) {
   const [load, setLoad] = useState(false);
 
   return load ? (
-    <iframe
-      src={`https://www.youtube.com/embed/${id}?autoplay=1`}
-      title="YouTube video"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      className="w-[255px] h-[157px] md:w-[560px] md:h-[315px]"
-    />
+    <div className="relative">
+      <iframe
+        src={`https://www.youtube.com/embed/${youtube_id}?autoplay=1`}
+        title="YouTube video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className="w-[255px] h-[157px] md:w-[560px] md:h-[315px]"
+      />
+      {onEdit && (
+        <button
+          onClick={onEdit}
+          className="absolute top-2 left-2 bg-myBlue-base text-white px-2 py-1 rounded text-xs hover:bg-myBlue-dark z-10"
+        >
+          Edit
+        </button>
+      )}
+    </div>
   ) : (
     <div
       onClick={() => setLoad(true)}
       style={{
-        backgroundImage: `url(https://i.ytimg.com/vi/${id}/hqdefault.jpg)`,
+        backgroundImage: `url(https://i.ytimg.com/vi/${youtube_id}/hqdefault.jpg)`,
       }}
       className="w-[255px] h-[157px] md:w-[560px] md:h-[315px] aspect-video bg-cover bg-center cursor-pointer relative border-2 rounded-md"
     >
@@ -27,6 +43,17 @@ export default function YouTubeLite({ id, title }: { id: string, title: string }
       <div className="absolute inset-0 flex items-center justify-center text-white text-5xl bg-black bg-opacity-40 rounded-md">
         ▶
       </div>
+      {onEdit && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onEdit();
+          }}
+          className="absolute top-2 left-2 bg-myBlue-base text-white px-2 py-1 rounded text-xs hover:bg-myBlue-dark z-10"
+        >
+          Edit
+        </button>
+      )}
     </div>
   );
 }

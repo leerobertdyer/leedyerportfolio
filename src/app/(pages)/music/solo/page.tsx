@@ -7,9 +7,70 @@ import ShowsSection from "@/components/ShowsSection/ShowsSection";
 import YouTubeLite from "@/components/YouTube/YouTube";
 import Link from "next/link";
 import "dotenv/config";
-import { SOLO_CALENDAR_ID } from "@/utils/consts";
+import { adminEmails, SOLO_ARTIST_ID, SOLO_CALENDAR_ID } from "@/utils/consts";
+import CoverList from "@/components/CoverList/CoverList";
+import SongForm from "@/components/Forms/SongForm";
+import VideoForm from "@/components/Forms/VideoForm";
+import VideoList from "@/components/VideoList/VideoList";
+import { useEffect, useState } from "react";
+import { Song, Video } from "@/utils/types";
+import { useSession } from "next-auth/react";
 
-export default function soloAct() {
+export default function SoloAct() {
+  const { data: session } = useSession();
+
+  // Song form state
+  const [isSongFormOpen, setIsSongFormOpen] = useState(false);
+  const [selectedSong, setSelectedSong] = useState<Song | null>(null);
+  const [songRefreshKey, setSongRefreshKey] = useState(0);
+
+  // Video form state
+  const [isVideoFormOpen, setIsVideoFormOpen] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
+  const [videoRefreshKey, setVideoRefreshKey] = useState(0);
+
+  // Featured video state
+  const [featuredVideo, setFeaturedVideo] = useState<Video | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    setIsAdmin(adminEmails.includes(session?.user?.email || ""));
+  }, [session]);
+
+  useEffect(() => {
+    const fetchFeaturedVideo = async () => {
+      const resp = await fetch(
+        `/api/music/videos?artist_id=${SOLO_ARTIST_ID}&is_featured=true`
+      );
+      if (resp.ok) {
+        const data = await resp.json();
+        setFeaturedVideo(data);
+      }
+    };
+    fetchFeaturedVideo();
+  }, [videoRefreshKey]);
+
+  function openSongForm(song: Song | null = null) {
+    setSelectedSong(song);
+    setIsSongFormOpen(true);
+  }
+
+  function closeSongForm() {
+    setSongRefreshKey((k) => k + 1);
+    setIsSongFormOpen(false);
+    setSelectedSong(null);
+  }
+
+  function openVideoForm(video: Video | null = null) {
+    setSelectedVideo(video);
+    setIsVideoFormOpen(true);
+  }
+
+  function closeVideoForm() {
+    setVideoRefreshKey((k) => k + 1);
+    setIsVideoFormOpen(false);
+    setSelectedVideo(null);
+  }
 
   const allSongs = [
     {
@@ -19,7 +80,6 @@ export default function soloAct() {
       artist: "Tiny Sun",
       img: "/images/maskedBackground.jpeg",
     },
-
     {
       id: "2",
       title: "Audrey",
@@ -35,6 +95,27 @@ export default function soloAct() {
       img: "/images/maskedBackground.jpeg",
     },
   ];
+
+  if (isSongFormOpen) {
+    return (
+      <SongForm
+        song={selectedSong}
+        handleBack={closeSongForm}
+        artist_id={SOLO_ARTIST_ID}
+      />
+    );
+  }
+
+  if (isVideoFormOpen) {
+    return (
+      <VideoForm
+        video={selectedVideo}
+        handleBack={closeVideoForm}
+        defaultArtistId={SOLO_ARTIST_ID}
+      />
+    );
+  }
+
   return (
     <div className="bg-[url(/images/maskedBackground.jpeg)] bg-cover bg-top text-myWhite-dark flex flex-wrap items-center justify-center gap-4 p-4">
       <BioSection mdWidth="md:w-[40rem]" padding="p-4">
@@ -47,7 +128,8 @@ export default function soloAct() {
           His solo work is minimal and melodic - drawing influence from artists
           like Elliott Smith and the Beatles. Fingerpicked guitar, melody, and
           lyrics are the focus, blending select covers with a deep catalog of
-          original songs released under the name <span className="text-myOrange-base">Tiny Sun</span>.
+          original songs released under the name{" "}
+          <span className="text-myOrange-base">Tiny Sun</span>.
         </p>
 
         <Link href="/contact" className="text-myBlue-base">
@@ -65,107 +147,37 @@ export default function soloAct() {
 
       <AudioPlayer songs={allSongs} />
 
+      {/* Featured Video */}
       <div className="w-full flex justify-center">
-        <YouTubeLite
-          id="09O7zjKqaRg"
-          title="Cover - CCR: Lookin Out My Back Door"
+        {featuredVideo ? (
+          <YouTubeLite
+            youtube_id={featuredVideo.youtube_id}
+            title={featuredVideo.title}
+            onEdit={isAdmin ? () => openVideoForm(featuredVideo) : undefined}
+          />
+        ) : (
+          <p className="text-myWhite-light">No featured video set</p>
+        )}
+      </div>
+
+      {/* Cover List */}
+      <div className="w-full h-fit flex flex-col items-center">
+        <CoverList
+          artist_id={SOLO_ARTIST_ID}
+          onEditSong={openSongForm}
+          refreshKey={songRefreshKey}
         />
       </div>
 
-      <YouTubeLite id="77kikByulrw" title="Cover - Elliot Smith: Memory Lane" />
-
-      <div className="w-full h-fit flex flex-col items-center">
-        <div className="bg-myBlack-dark bg-opacity-90 rounded-md p-4 flex flex-col items-center justify-center w-[20rem] md:w-[40rem] h-fit ">
-          <h2 className="text-2xl">Current cover List</h2>
-          <div className="text-myWhite-light flex flex-col items-start text-sm md:text-lg">
-            <p>
-              Boots Of Italian Leather -{" "}
-              <span className="text-myPink-light">Bob Dylan</span>
-            </p>
-            <p>
-              Lodi - <span className="text-myPink-light">CCR</span>
-            </p>
-            <p>
-              Lookin Out My Back Door -{" "}
-              <span className="text-myPink-light">CCR</span>
-            </p>
-            <p>
-              Every Breath You Take -{" "}
-              <span className="text-myPink-light">The Police</span>
-            </p>
-            <p>
-              Dang Me - <span className="text-myPink-light">Roger Miller</span>
-            </p>
-            <p>
-              Tall Tall Buildings -{" "}
-              <span className="text-myPink-light">John Hartford</span>
-            </p>
-            <p>
-              These Days - <span className="text-myPink-light">Niko Case</span>
-            </p>
-            <p>
-              Summers End -{" "}
-              <span className="text-myPink-light">John Prine</span>
-            </p>
-            <p>
-              Thirteen - <span className="text-myPink-light">Big Star</span>
-            </p>
-            <p>
-              Mrs. Robinson -{" "}
-              <span className="text-myPink-light">Simon & Garfunkle</span>
-            </p>
-            <p>
-              Margaritaville -{" "}
-              <span className="text-myPink-light">Jimmy Buffet</span>
-            </p>
-            <p>
-              Memory Lane -{" "}
-              <span className="text-myPink-light">Elliot Smith</span>
-            </p>
-            <p>
-              Walk The Line -{" "}
-              <span className="text-myPink-light">Johnny Cash</span>
-            </p>
-            <p>
-              I Still Miss Someone -{" "}
-              <span className="text-myPink-light">Johnny Cash</span>
-            </p>
-            <p>
-              Everything Is Free Now -{" "}
-              <span className="text-myPink-light">Gillian Welch</span>
-            </p>
-            <p>
-              I’m only sleeping -{" "}
-              <span className="text-myPink-light">The Beatles</span>
-            </p>
-            <p>
-              Yesterday - <span className="text-myPink-light">The Beatles</span>
-            </p>
-            <p>
-              Blackbird - <span className="text-myPink-light">The Beatles</span>
-            </p>
-            <p>
-              When I’m sixty four -{" "}
-              <span className="text-myPink-light">The Beatles</span>
-            </p>
-            <p>
-              Norwegian wood -{" "}
-              <span className="text-myPink-light">The Beatles</span>
-            </p>
-            <p>
-              Let it breathe -{" "}
-              <span className="text-myPink-light">The Water Liars</span>
-            </p>
-          </div>
-        </div>
+      {/* Video List */}
+      <div className="w-full flex flex-col items-center">
+        <h2 className="text-2xl mb-4">Videos</h2>
+        <VideoList
+          artist_id={SOLO_ARTIST_ID}
+          onEditVideo={openVideoForm}
+          refreshKey={videoRefreshKey}
+        />
       </div>
-      <YouTubeLite id="JupdC5IBrT8" title="Original - The Golden Hour" />
-      <YouTubeLite id="C-dldzvBR7I" title="Cover - CCR: Lodi/" />
-      <YouTubeLite
-        id="cxlv6LJ3VaY"
-        title="Cover - Johnny Cash: I Walk The Line"
-      />
-      {/* <YouTubeLite id="sqLORIPKybk" title='Original - Emily Rose'/> */}
     </div>
   );
 }

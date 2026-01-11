@@ -1,17 +1,17 @@
 export const ROUTES = {
-  "coding": [
+  coding: [
     { name: "Home", path: "/" },
     { name: "Projects", path: "/coding/projects" },
     { name: "Contact", path: "/contact" },
     { name: "Coding", path: "/coding" },
-    { name: "Resume", path: "/resumeJune2025.pdf", isExternal: true }
+    { name: "Resume", path: "/resumeJune2025.pdf", isExternal: true },
   ],
-  "music": [
-    { name: "Home", path: '/' },
+  music: [
+    { name: "Home", path: "/" },
     // { name: "Tiny Sun", path: "/music/tinysun" },
     // { name: "Wife Island", path: '/music/wifeisland' },
     // { name: "Aunt Vicki", path: "/music/auntvicki" },
-  ]
+  ],
 };
 
 const prysm = {
@@ -21,7 +21,7 @@ const prysm = {
   label: "Prysm Demo",
   description: "A ReactXR/Three.js/TypeScript virtual reality experience",
   image: "/images/prysm.png",
-  github: undefined
+  github: undefined,
 };
 const agendaKeeper = {
   link: "https://app.agendakeeper.com/",
@@ -31,7 +31,7 @@ const agendaKeeper = {
   description:
     "A TypeScript/React/Next agenda keeper for your virtual meetings",
   image: "/images/agenda-keeper.png",
-  github: undefined
+  github: undefined,
 };
 const tinySun = {
   link: "https://www.tinysunstudio.com",
@@ -40,7 +40,7 @@ const tinySun = {
   label: "Tiny Sun",
   description: "A React/Next.js/TypeScript studio website",
   image: "/images/tinySun.png",
-  github: 'https://github.com/leerobertdyer/tiny_sun'
+  github: "https://github.com/leerobertdyer/tiny_sun",
 };
 const wabs = {
   link: "#",
@@ -49,7 +49,7 @@ const wabs = {
   label: "Write A Bad Song",
   description: "A React/Next.js/TypeScript songwriting and motivational app",
   image: "/images/wabs.png",
-  github: 'https://github.com/leerobertdyer/wabsv2'
+  github: "https://github.com/leerobertdyer/wabsv2",
 };
 const wifeIsland = {
   link: "https://www.wifeislandduo.com",
@@ -59,7 +59,7 @@ const wifeIsland = {
   description:
     "A React/Next.js/TypeScript band website that utilizes Google Calendar API to display upcoming shows",
   image: "/images/wifeIsland.png",
-  github: 'https://github.com/leerobertdyer/wifeisland'
+  github: "https://github.com/leerobertdyer/wifeisland",
 };
 const ashevenue = {
   link: "#",
@@ -69,7 +69,7 @@ const ashevenue = {
   description:
     "An automated Flask app that uses Beautiful Soup and Playwright in a Docker container to scrape and display upcoming shows in Asheville, NC.",
   image: "/images/ashevenue.png",
-  github: 'https://github.com/leerobertdyer/vavl'
+  github: "https://github.com/leerobertdyer/vavl",
 };
 const pong = {
   link: "https://pongpong.glitch.me/",
@@ -79,8 +79,7 @@ const pong = {
   description:
     "A multiplayer pong game built with React, Node/Express, and Socket.io",
   image: "/images/pong.png",
-  github: 'https://github.com/leerobertdyer/PongPong'
-
+  github: "https://github.com/leerobertdyer/PongPong",
 };
 const auntVicki = {
   link: "https://www.auntvicki.rocks",
@@ -90,9 +89,8 @@ const auntVicki = {
   description:
     "A React/Next.js/TypeScript band website that utilizes Google Calendar API to display upcoming shows",
   image: "/images/auntVicki.png",
-  github: 'https://github.com/leerobertdyer/auntvicki'
+  github: "https://github.com/leerobertdyer/auntvicki",
 };
-
 
 export const allProjects = [
   agendaKeeper,
@@ -125,17 +123,20 @@ export const SKILLS = [
   },
   {
     name: "Golang",
-    description: "I have experience with Go working at Red Ventures to stand up several new microservices which helped us move away from legacy Java code, and gave us the opportunity to clean up and modernize our apps.",
+    description:
+      "I have experience with Go working at Red Ventures to stand up several new microservices which helped us move away from legacy Java code, and gave us the opportunity to clean up and modernize our apps.",
     links: [],
   },
   {
     name: "GraphQL",
-    description: "Another Red Ventures skill I learned, I helped build a subgraph for a federated GraphQL API which allowed collaboration between several teams at RV and the greater community.",
+    description:
+      "Another Red Ventures skill I learned, I helped build a subgraph for a federated GraphQL API which allowed collaboration between several teams at RV and the greater community.",
     links: [],
   },
   {
     name: "Shell Scripts",
-    description: "I have experience with shell scripting, and have used it to automate tasks and build scripts for my development environment and workflow.",
+    description:
+      "I have experience with shell scripting, and have used it to automate tasks and build scripts for my development environment and workflow.",
     links: [],
   },
   {
@@ -152,13 +153,15 @@ export const SKILLS = [
   },
   {
     name: "Python",
-    description: "I am quite comfortable with the fundamentals of Python, and have experience with Flask.",
+    description:
+      "I am quite comfortable with the fundamentals of Python, and have experience with Flask.",
     links: [{ href: "coding/projects#ashevenue", label: "Ashevenue" }],
   },
   {
     name: "Java",
-    description: "I worked extensively with java in rebuilding a legacy telephony sales app at Red Ventures.",
-    links: [{ href: "coding/projects", label: "Red Ventures Work Experience" }]
+    description:
+      "I worked extensively with java in rebuilding a legacy telephony sales app at Red Ventures.",
+    links: [{ href: "coding/projects", label: "Red Ventures Work Experience" }],
   },
   {
     name: "TypeScript",
@@ -229,5 +232,29 @@ export const SKILLS = [
 export const DUO_CALENDAR_ID =
   "507d3c707b4698a16683b04f302ab221389050e367ad3dd0cb06889f00748a3a@group.calendar.google.com";
 
-  export const SOLO_CALENDAR_ID = 
-    "56169198901904ef1fa66f1c5d53b8721892308a7ce99c430dab23b698f73409@group.calendar.google.com";
+export const SOLO_CALENDAR_ID =
+  "56169198901904ef1fa66f1c5d53b8721892308a7ce99c430dab23b698f73409@group.calendar.google.com";
+
+export const TINY_SUN_ARTIST_ID = "1"; // Using for solo artist currently.
+export const AUNT_VICKI_ARTIST_ID = "2";
+export const DUO_ARTIST_ID = "3";
+export const SOLO_ARTIST_ID = "1"; // Currently using Tiny Sun, but if I ever started playing out with tiny sun would have to switch this.
+
+export const adminEmails = ["leerobertdyer@gmail.com", "lee.dyer.dev@gmail.com", "ldyer@redventures.com"];
+
+export const ALLOWED_SONG_FIELDS = new Set([
+  "artist_id",
+  "title",
+  "src",
+  "img",
+  "is_cover",
+  "songwriter",
+]);
+
+export const ALLOWED_VIDEO_FIELDS = new Set([
+  "youtube_id",
+  "title",
+  "artist_id",
+  "is_featured",
+  "show_on_main",
+]);

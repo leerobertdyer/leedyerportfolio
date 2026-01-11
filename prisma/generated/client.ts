@@ -65,12 +65,12 @@ export type VerificationToken = Prisma.VerificationTokenModel
  */
 export type artists = Prisma.artistsModel
 /**
- * Model shows
- * 
- */
-export type shows = Prisma.showsModel
-/**
  * Model songs
  * 
  */
 export type songs = Prisma.songsModel
+/**
+ * Model videos
+ * 
+ */
+export type videos = Prisma.videosModel

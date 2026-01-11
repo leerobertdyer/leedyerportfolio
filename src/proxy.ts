@@ -10,5 +10,5 @@ export default withAuth({
 });
 
 export const config = {
-  matcher: ["/music/admin/:path*", "/api/storage/:path*", "/api/music/:path*"],
+  matcher: ["/music/admin/:path*", "/api/storage/:path*"],
 };

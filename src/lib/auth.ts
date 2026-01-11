@@ -4,6 +4,7 @@ import EmailProvider from "next-auth/providers/email";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { PrismaPg } from '@prisma/adapter-pg'
 import { PrismaClient } from "../../prisma/generated/client";
+import { adminEmails } from "@/utils/consts";
 
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL })
 const prisma = new PrismaClient({ adapter })
@@ -16,19 +17,30 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.GITHUB_SECRET!,
     }),
     EmailProvider({
-    server: {
-      host: "smtp.gmail.com",
-      port: 587,
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD
-      }
-    },
-    from: "noreply@leedyer.com"
-  }),
+      server: {
+        host: "smtp.gmail.com",
+        port: 587,
+        auth: {
+          user: process.env.GMAIL_USER,
+          pass: process.env.GMAIL_APP_PASSWORD,
+        },
+      },
+      from: "noreply@leedyer.com",
+    }),
   ],
   session: {
     strategy: "jwt",
+  },
+  callbacks: {
+    async signIn({ user }) {
+      if (!user.email || !adminEmails.includes(user.email)) {
+        return false;
+      }
+      return true;
+    },
+    async redirect({ baseUrl }) {
+      return baseUrl;
+    },
   },
   secret: process.env.NEXTAUTH_SECRET,
 };
