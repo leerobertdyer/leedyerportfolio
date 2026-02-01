@@ -14,25 +14,6 @@ export const ROUTES = {
   ],
 };
 
-const prysm = {
-  link: "https://demo.prysmxr.com/",
-  href: "coding//projects#prysm",
-  id: "prysm",
-  label: "Prysm Demo",
-  description: "A ReactXR/Three.js/TypeScript virtual reality experience",
-  image: "/images/prysm.png",
-  github: undefined,
-};
-const agendaKeeper = {
-  link: "https://app.agendakeeper.com/",
-  href: "coding//projects#agenda-keeper",
-  id: "agenda-keeper",
-  label: "Agenda Keeper",
-  description:
-    "A TypeScript/React/Next agenda keeper for your virtual meetings",
-  image: "/images/agenda-keeper.png",
-  github: undefined,
-};
 const tinySun = {
   link: "https://www.tinysunstudio.com",
   href: "coding//projects#tiny-sun",
@@ -42,84 +23,83 @@ const tinySun = {
   image: "/images/tinySun.png",
   github: "https://github.com/leerobertdyer/tiny_sun",
 };
-const wabs = {
-  link: "#",
-  href: "coding//projects#wabs",
-  id: "wabs",
-  label: "Write A Bad Song",
-  description: "A React/Next.js/TypeScript songwriting and motivational app",
-  image: "/images/wabs.png",
-  github: "https://github.com/leerobertdyer/wabsv2",
-};
-const wifeIsland = {
-  link: "https://www.wifeislandduo.com",
-  href: "coding//projects#wife-island",
-  id: "wife-island",
-  label: "Wife Island",
-  description:
-    "A React/Next.js/TypeScript band website that utilizes Google Calendar API to display upcoming shows",
-  image: "/images/wifeIsland.png",
-  github: "https://github.com/leerobertdyer/wifeisland",
-};
-const ashevenue = {
-  link: "#",
-  href: "coding//projects#ashevenue",
-  id: "ashevenue",
-  label: "Ashevenue",
-  description:
-    "An automated Flask app that uses Beautiful Soup and Playwright in a Docker container to scrape and display upcoming shows in Asheville, NC.",
-  image: "/images/ashevenue.png",
-  github: "https://github.com/leerobertdyer/vavl",
-};
-const pong = {
-  link: "https://pongpong.glitch.me/",
-  href: "coding//projects#pong",
-  id: "pong",
-  label: "Pong Pong",
-  description:
-    "A multiplayer pong game built with React, Node/Express, and Socket.io",
-  image: "/images/pong.png",
-  github: "https://github.com/leerobertdyer/PongPong",
-};
 const auntVicki = {
   link: "https://www.auntvicki.rocks",
   href: "coding//projects#aunt-vicki",
   label: "Aunt Vicki",
   id: "aunt-vicki",
   description:
-    "A React/Next.js/TypeScript band website that utilizes Google Calendar API to display upcoming shows",
+    "A React/Vite/TypeScript band website that utilizes Google Calendar API to display upcoming shows",
   image: "/images/auntVicki.png",
   github: "https://github.com/leerobertdyer/auntvicki",
 };
+const erinDawn = {
+  link: "https://www.erindawncampbell.com",
+  href: "coding//projects#erin-dawn",
+  id: "erin-dawn",
+  label: "Erin Dawn Campbell",
+  description:
+    "A React/Vite/TypeScript e-commerce site for local clothing designer with shopping cart, Stripe, Firebase, and admin backend for inventory",
+  image: "/images/erinDawnSite.png",
+  github: "https://github.com/leerobertdyer/erin_dawn",
+};
+const nvelope = {
+  link: "https://www.nvelopes.app",
+  href: "coding//projects#nvelope",
+  id: "nvelope",
+  label: "Nvelope",
+  description:
+    "A personal finance management app built with React, TypeScript, Firebase, and Tailwind. Old school budgeting with digital envelopes.",
+  image: "/images/nvelopesIcon.png",
+  github: "https://github.com/leerobertdyer/nvelope",
+};
+const server = {
+  link: "https://github.com/leerobertdyer/server",
+  href: "coding//projects#server",
+  id: "server",
+  label: "Shared Node Server",
+  description:
+    "A general-use Node/Express/TypeScript backend for hobby projects: nodemailer, Stripe, Firebase Admin, PostgreSQL, and email/SEO routes for Aunt Vicki, Erin Dawn, and Nvelope",
+  image: "/images/nodeServer.webp",
+  github: "https://github.com/leerobertdyer/server",
+};
+const leedyerportfolio = {
+  link: "https://www.leedyer.com",
+  href: "coding//projects#leedyerportfolio",
+  id: "leedyerportfolio",
+  label: "leedyer.com (this site)",
+  description:
+    "The portfolio you're staring at right now. Yes, it's on the list. It has a lot going on, including Prisma, NextAuth, multi-router architecture, firebase-admin, and more. ",
+  image: "/images/profilePicSmaller.jpg",
+  github: "https://github.com/leerobertdyer/leedyerportfolio",
+};
 
 export const allProjects = [
-  agendaKeeper,
-  prysm,
-  tinySun,
-  wabs,
-  ashevenue,
+  nvelope,
+  erinDawn,
   auntVicki,
-  wifeIsland,
-  pong,
+  tinySun,
+  server,
+  leedyerportfolio,
 ];
 
 export const SKILLS = [
   {
     name: "React",
     description: "This portfolio site was built in React!",
-    links: [agendaKeeper, prysm, tinySun, wabs],
+    links: [auntVicki, tinySun, erinDawn, nvelope, leedyerportfolio],
   },
   {
     name: "Next.js",
     description:
       "This portfolio site was built utilizing NEXT.js for both front and backend!",
-    links: [agendaKeeper, prysm, tinySun, wifeIsland],
+    links: [tinySun, leedyerportfolio],
   },
   {
     name: "Node.js",
     description:
       "This portfolio site uses nodemailer in the backend to handle the contact form.",
-    links: [agendaKeeper, prysm, tinySun, wabs, pong],
+    links: [auntVicki, tinySun, server, leedyerportfolio],
   },
   {
     name: "Golang",
@@ -142,8 +122,8 @@ export const SKILLS = [
   {
     name: "SQL",
     description:
-      "I have experience with Knex, SQLAlchemy, as well as writing custom SQL functions.",
-    links: [agendaKeeper, wabs, ashevenue, tinySun],
+      "Experienced in PostgreSQL, having used it plenty at Red Ventures as well as here on this site.",
+    links: [server],
   },
   {
     name: "HTML/CSS",
@@ -155,7 +135,7 @@ export const SKILLS = [
     name: "Python",
     description:
       "I am quite comfortable with the fundamentals of Python, and have experience with Flask.",
-    links: [{ href: "coding/projects#ashevenue", label: "Ashevenue" }],
+    links: [],
   },
   {
     name: "Java",
@@ -166,60 +146,60 @@ export const SKILLS = [
   {
     name: "TypeScript",
     description: "This portfolio site was built in TypeScript!",
-    links: [agendaKeeper, prysm, tinySun, wabs, wifeIsland],
+    links: [auntVicki, tinySun, erinDawn, nvelope, server, leedyerportfolio],
   },
   {
     name: "Three.js",
     description:
       "I have a firm grasp on the key concepts: Scene, Camera, Renderer, Mesh, Geometry, Material, Lighting, Textures.",
-    links: [prysm],
+    links: [],
   },
   {
     name: "ReactXR",
     description:
       "I have a solid understanding of the ReactXR library. Including basic setup for VR and AR.",
-    links: [prysm],
+    links: [],
   },
   {
     name: "Vitest",
     description:
       "I have experience crafting and editing unit tests with Vitest and React Testing Library.",
-    links: [agendaKeeper],
+    links: [],
   },
   {
     name: "Express",
     description:
       "I have experience with Express, and have worked with several RESTful APIs.",
-    links: [pong],
+    links: [server],
   },
   {
     name: "Docker",
     description: "I have used Docker to containerize and deploy.",
-    links: [ashevenue],
+    links: [],
   },
   {
     name: "Socket",
     description:
       "I have experience with socket.io setting up instant messaging and live notifications.",
-    links: [pong, wabs, prysm],
+    links: [],
   },
   {
     name: "Playwright",
     description:
       "I have experience with Playwright and Beautiful Soup for web scraping.",
-    links: [ashevenue],
+    links: [],
   },
   {
     name: "Firebase",
     description:
       "I have experience with Firebase and Supabase for authentication and database management.",
-    links: [agendaKeeper, wifeIsland, prysm, tinySun, wabs, ashevenue],
+    links: [auntVicki, tinySun, erinDawn, nvelope, leedyerportfolio],
   },
   {
     name: "APIs",
     description:
       "I have experience with several 3rd party APIs including Dropbox, Google Calendar, and PayPal.",
-    links: [agendaKeeper, wifeIsland, prysm, tinySun, wabs, ashevenue],
+    links: [auntVicki, tinySun, erinDawn, nvelope, server, leedyerportfolio],
   },
   {
     name: "Git/GitHub",
